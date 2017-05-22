@@ -1,0 +1,82 @@
+.carousel-control.right, .carousel-control.left{
+	background: none;
+}
+.carousel-inner img{
+	width: 100%;
+}
+.fh5co-section-gray{
+	background: none;
+}
+#fh5co-logo{
+	margin: 0 !important;
+	padding: 0 !important;
+}
+#fh5co-logo img{
+	height: 100px;
+}
+.heading-title{
+	margin-top: 20px;
+	background: none;
+	text-align: center;
+	font-weight: bold;
+	padding: 15px 0;
+}
+.heading-title:before{
+	content: '';
+    display: inline-block;
+    vertical-align: middle;
+    background: #000;
+    height: 1px;
+    width: 8%;
+    text-align: left;
+    left: 0;
+    margin-right: 10px;
+}
+.heading-title:after{
+       content: '';
+    display: inline-block;
+    vertical-align: middle;
+    background: #000;
+    height: 1px;
+    width: 8%;
+    text-align: left;
+    left: 0;
+    margin-left: 10px;
+}
+
+/*Tours */
+.fh5co-tours > div .desc{
+	padding: 0;
+	padding-bottom: 15px;
+}
+.fh5co-tours > div .desc span{
+	display: block;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 5px;
+    width: 89%;
+    padding: 4px 10px;
+    font-weight: bold;
+    background: #000;
+    font-size: 18pt;
+}
+.category {
+	position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px 0;
+    z-index: 12;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    width: 100px;
+}
+.category span{
+	    display: block;
+    color: rgba(0, 0, 0, 0.9);
+    margin-bottom: 5px;
+    /* width: 89%; */
+    padding: 4px 10px;
+    font-weight: bold;
+    background: #d2d1d1;
+    font-size: 14pt;
+}
