@@ -160,3 +160,20 @@
   border-bottom: 10px solid transparent;   
   border-right:10px solid blue; 
 }
+
+#footer {
+    background: #77a921;
+    padding: 40px 0 0px;
+}
+
+#footer .fh5co-footer-link h3 {
+    color: rgba(27, 20, 20, 0.98);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+#footer .fh5co-footer-link li a {
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+}
