@@ -215,3 +215,20 @@
     color: rgb(0, 0, 0);
     font-weight: 400;
 }
+
+.img-icon-list {
+    width: 90px;
+    padding-bottom:  10px;
+    padding-left: 20px;
+}
+.price-list {
+    float: right;
+    padding: 10px;
+    color: red;
+    border: double 3px red;
+}
+.read_more {
+    float: right;
+    padding: 4px;
+    color: white;
+}
