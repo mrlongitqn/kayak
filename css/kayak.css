@@ -160,3 +160,40 @@
   border-bottom: 10px solid transparent;   
   border-right:10px solid blue; 
 }
+
+/*Menu*/
+#fh5co-menu-wrap{
+	margin-top: 0;
+	float: left;
+}
+.stuck{
+	    position: relative !important;
+}
+#fh5co-menu-wrap .sf-menu a{
+	color: rgb(255, 255, 255);
+}
+#fh5co-primary-menu > li > .sf-with-ul:after{
+	color: rgb(255, 255, 255);
+}
+.sf-menu{
+	margin: 0 !important;
+}
+.sf-menu li, .sf-menu ul li, .sf-menu ul ul li, .sf-menu li:hover, .sf-menu li.sfHover{
+	    padding: 0 20px;
+}
+.sf-menu li, .sf-menu ul li, .sf-menu ul ul li, .sf-menu li:hover, .sf-menu li.sfHover:first-child{
+	padding-left: 0;
+}
+.f-right{
+	float: right !important;
+}
+.f-left{
+	float: left !important;
+}
+.social-top{
+	padding-top: 30px;
+	
+}
+.social-top a{
+	color: #fff !important;
+}
