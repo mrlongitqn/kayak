@@ -196,12 +196,13 @@ body{
 }
 .social-top{
 	padding-top: 30px;
-	
+
 }
 .social-top a{
 	color: #fff !important;
 }
 
+<<<<<<< HEAD
 /* new heading */
 .title--center {
     margin-bottom: 30px;
@@ -256,4 +257,45 @@ body{
 }
 .fh5co-tours > div:after{
 	    background: rgba(0, 0, 0, 0.1);
+=======
+
+#footer {
+    background: #77a921;
+    padding: 40px 0 0px;
+}
+
+#footer .fh5co-footer-link h3 {
+    color: rgba(27, 20, 20, 0.98);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+#footer .fh5co-footer-link li a {
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+}
+
+.img-icon-list {
+    width: 90px;
+    padding-bottom:  10px;
+    padding-left: 20px;
+}
+.price-list {
+    float: right;
+    padding: 10px;
+    color: red;
+    border: double 3px red;
+}
+.read_more {
+    float: right;
+    padding: 4px;
+    color: white;
+}
+.heading-line {
+    font-weight: 600;
+}
+.button-book{
+    margin: 0 auto;
+>>>>>>> dab8fa93f30f9e911da5392d3b6ce691af88b91b
 }
