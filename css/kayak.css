@@ -8,7 +8,7 @@ body{
 .carousel-inner img{
 	width: 100%;
 }
-.fh5co-section-gray{
+.fh5co-section-highlight{
 	background: url(../images/most-popular-bg.jpg) no-repeat center;
 }
 #fh5co-logo{
@@ -19,7 +19,7 @@ body{
 	height: 100px;
 }
 .heading-title{
-	margin-top: 20px;
+	margin-top: 50px;
 	background: none;
 	text-align: center;
 	font-weight: bold;
@@ -92,22 +92,20 @@ body{
 	position: absolute;
     bottom: 0;
     right: 0;
-    padding: 20px 0;
+    padding: 10px 0;
     z-index: 90;
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
-    transition: 0.3s;
-    width: 100px;
+    transition: 0.3s;    
+	background: url(../images/price_image35.png) no-repeat left;
 }
 .price .text{
-	    display: block;
+display: block;
     color: rgba(0, 0, 0, 0.9);
-    margin-bottom: 5px;
-    /* width: 89%; */
-    padding: 4px 10px;
+    padding: 4px 6px 4px 17px;
     font-weight: bold;
-    background: #d2d1d1;
     font-size: 14pt;
+    line-height: 35px;
 }
 
 .h_iframe        {position:relative;}
@@ -202,7 +200,6 @@ body{
 	color: #fff !important;
 }
 
-<<<<<<< HEAD
 /* new heading */
 .title--center {
     margin-bottom: 30px;
@@ -216,7 +213,7 @@ body{
 .title {
     margin-bottom: 20px;
     position: relative;
-	 margin-top: 30px;
+	 margin-top: 40px;
 }
 .title__subtitle {
     margin-bottom: 10px;
@@ -257,7 +254,7 @@ body{
 }
 .fh5co-tours > div:after{
 	    background: rgba(0, 0, 0, 0.1);
-=======
+}
 
 #footer {
     background: #77a921;
@@ -297,5 +294,16 @@ body{
 }
 .button-book{
     margin: 0 auto;
->>>>>>> dab8fa93f30f9e911da5392d3b6ce691af88b91b
+}
+.caption-slide{
+	 color: black;
+   -webkit-text-fill-color: black; /* Will override color (regardless of order) */
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: white;
+}
+.carousel-indicators{
+	bottom:0;
+}
+.carousel-caption{
+	bottom: 10px;
 }
