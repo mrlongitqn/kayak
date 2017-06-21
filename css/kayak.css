@@ -16,7 +16,18 @@ body{
 	padding: 0 !important;
 }
 #fh5co-logo img{
-	height: 100px;
+	height: 150px;
+	margin: 10px 0;
+}
+#fh5co-logo a{
+	color: #fff;
+	font-size: 40pt;
+}
+#fh5co-logo a:hover, #fh5co-logo a:focus {
+    color: #FFF !important;
+}
+#fh5co-logo .logo-text-small{
+	font-weight:100;
 }
 .heading-title{
 	margin-top: 50px;
@@ -50,10 +61,19 @@ body{
 
 /*Tours */
 .fh5co-tours > div .desc{
-	padding: 0;
-	padding-bottom: 15px;
+	height: 72px;
+    display: block;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 10px;
+    /* width: 89%; */
+    padding: 10px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.4);
+    font-size: 18pt;
+    line-height: 18pt;
 }
 .fh5co-tours > div .desc span{
+	/*
 	display: block;
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 5px;
@@ -62,6 +82,7 @@ body{
     font-weight: bold;
     background: #000;
     font-size: 18pt;
+	*/
 }
 .fh5co-tours > div .desc .title-project{
 	font-size: 16pt;
@@ -78,14 +99,14 @@ body{
     width: 100px;
 }
 .category span{
-	    display: block;
+    display: block;
     color: rgba(0, 0, 0, 0.9);
     margin-bottom: 5px;
-    /* width: 89%; */
     padding: 4px 10px;
     font-weight: bold;
-    background: #d2d1d1;
+    background: rgba(210, 209, 209, 0.5);
     font-size: 14pt;
+    border: 1px solid rgba(210, 209, 209, 0.5);
 }
 
 .price {
@@ -97,12 +118,12 @@ body{
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;    
-	background: url(../images/price_image35.png) no-repeat left;
+	background: url(../images/price-tag-30.png) no-repeat left;
 }
 .price .text{
-display: block;
-    color: rgba(0, 0, 0, 0.9);
-    padding: 4px 6px 4px 17px;
+    display: block;
+    color: #f79a36;
+    padding: 4px 6px 4px 35px;
     font-weight: bold;
     font-size: 14pt;
     line-height: 35px;
@@ -214,6 +235,7 @@ display: block;
     margin-bottom: 20px;
     position: relative;
 	 margin-top: 40px;
+	 z-index:-1;	
 }
 .title__subtitle {
     margin-bottom: 10px;
@@ -257,7 +279,7 @@ display: block;
 }
 
 #footer {
-    background: #77a921;
+    background: rgb(164, 224, 61);
     padding: 40px 0 0px;
 }
 
@@ -272,11 +294,20 @@ display: block;
     color: rgb(0, 0, 0);
     font-weight: 400;
 }
+.ul-list-icon{
+	list-style: none;
+}
 
+.ul-list-icon .img-icon-list {
+    width: 46px;
+    padding-bottom: 4px;
+	cursor: pointer;
+}
 .img-icon-list {
     width: 90px;
-    padding-bottom:  10px;
-    padding-left: 20px;
+    padding-bottom: 4px;
+    margin: 4px;
+	    cursor: pointer;
 }
 .price-list {
     float: right;
@@ -306,4 +337,38 @@ display: block;
 }
 .carousel-caption{
 	bottom: 10px;
+}
+.video-container {
+	position:relative;
+	padding-bottom:56.25%;
+	padding-top:30px;
+	height:0;
+	overflow:hidden;
+}
+
+.video-container iframe, .video-container object, .video-container embed {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+.see-more{
+	float: right;
+    margin-top: -30px;
+    margin-bottom: 10px;
+	z-index:9;
+}
+.see-more a{
+	    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    /* padding: 8px; */
+    line-height: 30px;
+    margin: 0;
+    padding: 0 8px;
+    font-size: 12pt;
+}
+.row-bottom-padded-md{
+	padding-bottom: 0;
 }
