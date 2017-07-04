@@ -17,6 +17,11 @@ class CategoryController extends Controller
 {
     public function index(){
         $category = Category::all();
-        return view("admin/category/category")->with("categories", $category);
+        return view("admin.category.index")->with("categories", $category);
+    }
+
+    public function edit($id){
+        $data['cat'] = Category::find($id);
+        return view('admin.category.edit', $data);
     }
 }
