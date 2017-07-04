@@ -11,7 +11,6 @@
 |
 */
 
-<<<<<<< HEAD
 Route::get('/', function () {
     return view('welcome');
 });
@@ -24,23 +23,6 @@ Route::group(array('prefix' => '/admin', 'namespace' => 'Admin', 'middleware' =>
     Route::resource('category', 'CategoryController');
     Route::post('category/destroy', 'CategoryController@destroy');
 });
-=======
-Route::get('admin/category','CategoryController@index');
-Route::get('admin/category/edit/{id}','CategoryController@edit');
->>>>>>> d503dff2c32d6652cb487c9a29a98b8f4088abcb
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/','TopController@index');
-
-
-Route::get('/alltours/','TourController@index');
-
-Route::get('/tour/{id}','TourController@get_list_by_category');
-
-
-Route::get('/tour/detail/{id}','TourController@get_detail');
-
-
-Route::get('/projects','ProjectController@get_list');
