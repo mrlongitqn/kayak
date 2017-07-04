@@ -14,8 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('admin/category','CategoryController@index');
-Route::get('admin/category/edit/{id}','CategoryController@edit');
+Route::group(array('prefix' => '/admin', 'namespace' => 'Admin', 'middleware' => ['auth']), function () {
+//Admin category
+    /*
+    Route::get('category', 'CategoryController@index');
+    Route::get('category/edit/{id}', 'CategoryController@edit');
+    */
+    Route::resource('category', 'CategoryController');
+    Route::post('category/destroy', 'CategoryController@destroy');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

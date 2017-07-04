@@ -738,12 +738,12 @@
             {!! Form::open(array('url' => "", 'class' => 'form-horizontal', 'id' => 'form_modal_delete')) !!}
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Are you sure delete?</h4>
+                <h4 class="modal-title">Delete item</h4>
             </div>
             <div class="modal-body">
                 <input type="hidden" name="id" id="del_modal_id"/>
 
-                <p><i class="fa fa-exclamation-triangle red"></i> {{trans("common.del_modal_message")}}</p>
+                <p><i class="fa fa-exclamation-triangle red"></i> Are you sure delete item?</p>
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-primary">Yes</button>
@@ -790,6 +790,10 @@
 <!-- AdminLTE App -->
 <script src="{{ asset('admin/dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script type="text/javascript">
+    var root = '{{url("/")}}';
+    var mn_selected = '';
+</script>
 <script src="{{ asset('admin/dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('admin/admin.js')}}"></script>

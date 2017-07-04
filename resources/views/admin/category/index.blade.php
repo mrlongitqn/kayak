@@ -26,8 +26,8 @@
                             {{$cat->Description}}
                         </td>
                         <td>
-                            <a href="{{action('CategoryController@edit', ['id' => $cat->Id])}}" title="Cập nhật"><i class="fa fa-pencil"></i></a>
-                            <a href="javascript:;" onclick="deleteModal('{{$cat->Id}}', '/admin/category/delete')" title="Xóa" class="red"><i class="fa fa-trash-o"></i></a>
+                            <a href="{{action('Admin\CategoryController@edit', ['id' => $cat->id])}}" title="Cập nhật"><i class="fa fa-pencil"></i></a>
+                            <a href="javascript:;" onclick="deleteModal('{{$cat->id}}', '/admin/category/destroy')" title="Xóa" class="red"><i class="fa fa-trash-o"></i></a>
                         </td>
                     </tr>
 
