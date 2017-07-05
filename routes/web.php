@@ -11,23 +11,20 @@
 |
 */
 
-<<<<<<< HEAD
+
 Route::get('/', function () {
     return view('welcome');
 });
 Route::group(array('prefix' => '/admin', 'namespace' => 'Admin', 'middleware' => ['auth']), function () {
-//Admin category
-    /*
-    Route::get('category', 'CategoryController@index');
-    Route::get('category/edit/{id}', 'CategoryController@edit');
-    */
+    //Admin category
     Route::resource('category', 'CategoryController');
     Route::post('category/destroy', 'CategoryController@destroy');
+    Route::post('category/save/{id}', 'CategoryController@postSave');
+
+    //Tours
+    
 });
-=======
-Route::get('admin/category','CategoryController@index');
-Route::get('admin/category/edit/{id}','CategoryController@edit');
->>>>>>> d503dff2c32d6652cb487c9a29a98b8f4088abcb
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

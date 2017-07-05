@@ -20,31 +20,31 @@
                 </div>
 
             @endif
-            {!! Form::open(array('method'=>'post','url'=>action('Admin\CategoryController@postSave', ['id' => 0]),"class"=>"form-horizontal")) !!}
+            {!! Form::open(array('method'=>'post','url'=>action('Admin\CategoryController@postSave', ['id' => $category->id]),"class"=>"form-horizontal")) !!}
             <div class="box-body">
                 <div class="form-group">
                     {!! Form::label('name','Category Name', array('class'=>'col-sm-2 control-label')) !!}
                     <div class="col-sm-10">
-                        {!! Form::text('name','' ,array('class'=>'form-control')) !!}
+                        {!! Form::text('name',$category->name ,array('class'=>'form-control')) !!}
                     </div>
                 </div>
                 <div class="form-group">
                     {!! Form::label('parent_id','Parent Category', array('class'=>'col-sm-2 control-label')) !!}
                     <div class="col-sm-10">
 
-                        {!! Form::select('parent_id',$parent_id,'0',array('class'=>'form-control')) !!}
+                        {!! Form::select('parent_id',$parent_id,$category->parent_id,array('class'=>'form-control')) !!}
                     </div>
                 </div>
                 <div class="form-group">
                     {!! Form::label('tag','Tags', array('class'=>'col-sm-2 control-label')) !!}
                     <div class="col-sm-10">
-                        {!! Form::text('tag','' ,array('class'=>'form-control')) !!}
+                        {!! Form::text('tag',$category->tag ,array('class'=>'form-control')) !!}
                     </div>
                 </div>
                 <div class="form-group">
                     {!! Form::label('description','Description', array('class'=>'col-sm-2 control-label')) !!}
                     <div class="col-sm-10">
-                        {!! Form::text('description','' ,array('class'=>'form-control')) !!}
+                        {!! Form::text('description',$category->description ,array('class'=>'form-control')) !!}
                     </div>
                 </div>
                 <div class="form-group">
