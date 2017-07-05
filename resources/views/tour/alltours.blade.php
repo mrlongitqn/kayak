@@ -29,11 +29,7 @@
                                 <div class="mini-view" href="images/tours/{{$tour['ImageFeature']}}" data-fancybox-title="{{$tour['Description']}}">
                                     <img src="images/tours/{{$tour['ImageFeature']}}" alt="tours" class="img-responsive">
                                     <div class="price">
-
-
                                         <span class="text">USD {{$tour['Price']}}/PAX</span>
-
-
                                     </div>
                                     <div class="desc">
                                         <span>{{$tour['Name']}}</span>

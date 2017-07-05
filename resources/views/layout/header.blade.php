@@ -49,7 +49,7 @@
                     </li>
                     <li><a href="#">SERVICES</a>
                     </li>
-                    <li><a href="#">RESPONSIBLE TRAVEL</a>
+                    <li><a href="/projects">RESPONSIBLE TRAVEL</a>
                     </li>
                     <li><a href="#">CONTACT US</a>
                     </li>
