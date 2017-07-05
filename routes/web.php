@@ -11,11 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 Route::get('admin/category','CategoryController@index');
 Route::get('admin/category/edit/{id}','CategoryController@edit');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/','TopController@index');
+
+
+Route::get('/alltours/','TourController@index');
+
+Route::get('/tour/{id}','TourController@get_list_by_category');
+
+
+Route::get('/tour/detail/{id}','TourController@get_detail');
