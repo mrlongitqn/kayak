@@ -8,7 +8,7 @@
  */
 namespace App\Http\Controllers\Admin;
 
-use App\Category;
+use App\Models\Category;
 use App\Http\Requests\CheckCategoryRequest;
 use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;

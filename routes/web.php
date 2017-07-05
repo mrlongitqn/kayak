@@ -22,7 +22,8 @@ Route::group(array('prefix' => '/admin', 'namespace' => 'Admin', 'middleware' =>
     Route::post('category/save/{id}', 'CategoryController@postSave');
 
     //Tours
-    
+    Route::resource('tour', 'TourController');
+    Route::post('tour/save/{id}', 'TourController@save');
 });
 
 Auth::routes();

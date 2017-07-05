@@ -786,6 +786,6 @@
 </script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('admin/admin.js')}}"></script>
-
+@yield('scripts')
 </body>
 </html>

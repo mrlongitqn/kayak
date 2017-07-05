@@ -26,26 +26,25 @@ class TourController extends Controller
         $this->category = $category;
     }
 
-    public function index(){
+    public function index()
+    {
 
-       $categories = $this->category->get_list(1);
+        $categories = $this->category->get_list(1);
 
-       if (!empty($categories)) {
-           foreach ($categories as $category) {
+        if (!empty($categories)) {
+            foreach ($categories as $category) {
 
-               $list_tours[$category['Name']] =  $this->tour->get_list($category['Id'],['tour']);
-           }
-       }
+                $list_tours[$category['Name']] = $this->tour->get_list($category['Id'], ['tour']);
+            }
+        }
 
-        return $this->_render("tour/alltours",[
+        return $this->_render("tour/alltours", [
             'list_tours' => $list_tours
         ]);
-
-
-
     }
 
-    public function get_list_by_category($category_id) {
+    public function get_list_by_category($category_id)
+    {
 
         if (empty($category_id)) {
             return false;
@@ -53,19 +52,20 @@ class TourController extends Controller
 
         $tours = $this->tour->get_list($category_id);
 
-        return $this->_render("tour/tour_category",[
+        return $this->_render("tour/tour_category", [
             'list_tours' => $tours
         ]);
     }
 
-    public function get_detail($tour_id) {
+    public function get_detail($tour_id)
+    {
         if (empty($tour_id)) {
             return false;
         }
 
         $tour_detail = $this->tour->get_detail($tour_id);
 
-        return $this->_render("tour/tour_detail",[
+        return $this->_render("tour/tour_detail", [
             'tour_detail' => $tour_detail
         ]);
 
