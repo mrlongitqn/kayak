@@ -10,7 +10,7 @@ class Tour extends Model
 
     public function get_list($category_id = null, $options = []){
 
-       $list_tour = $this->select('tours.Id','tours.Name','tours.Description','tours.Intro','tours.Price','categories.Name as CategoryName','tours.ImageFeature','tours.CategoryId','tours.PickUp','tours.Duration','tours.Services')
+       $list_tour = $this->select('tours.id','tours.name','tours.description','tours.Intro','tours.Price','categories.Name as CategoryName','tours.ImageFeature','tours.CategoryId','tours.PickUp','tours.Duration','tours.Services')
             ->leftJoin('Categories', 'tours.CategoryId','Categories.Id')
             ->where('tours.Status','=',0)
             ->where('categories.Status','=',0);
