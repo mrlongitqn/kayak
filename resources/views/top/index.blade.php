@@ -15,21 +15,21 @@
 
             @if (!empty($tours))
                 @foreach ($tours as $tour)
-            <a href="/tour/detail/{{$tour['Id']}}">
-                <div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
-                    <div><img src="images/tours/{{$tour['ImageFeature']}}" alt="tours" class="img-responsive">
-                        <div class="category">
-                            <span>{{$tour['CategoryName']}}</span>
+                    <a href="/tour/detail/{{$tour['id']}}">
+                        <div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
+                            <div><img src="images/tours/{{$tour['image_feature']}}" alt="tours" class="img-responsive">
+                                <div class="category">
+                                    <span>{{$tour['category_name']}}</span>
+                                </div>
+                                <div class="price">
+                                    <span class="text">USD {{$tour['price']}}/PAX</span>
+                                </div>
+                                <div class="desc">
+                                    <span>{{$tour['name']}}</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="price">
-                            <span class="text">USD {{$tour['Price']}}/PAX</span>
-                        </div>
-                        <div class="desc">
-                            <span>{{$tour['Name']}}</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
+                    </a>
                 @endforeach
             @endif
         </div>
@@ -48,48 +48,48 @@
                 </div>
             </div>
             @if(!empty($project))
-            <div class="col-md-7 animate-box">
-                <div id="myCarouse2" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#myCarouse2" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarouse2" data-slide-to="1"></li>
-                        <li data-target="#myCarouse2" data-slide-to="2"></li>
-                    </ol>
+                <div class="col-md-7 animate-box">
+                    <div id="myCarouse2" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarouse2" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarouse2" data-slide-to="1"></li>
+                            <li data-target="#myCarouse2" data-slide-to="2"></li>
+                        </ol>
 
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner">
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
 
-                            @php $list_image = explode(';', $project['ImageFeature']) @endphp
+                            @php $list_image = explode(';', $project['image_feature']) @endphp
 
-                        @if(!empty($list_image))
-                            @foreach($list_image as $key => $image)
-                                <div class="item @if($key == 0) active @endif ">
-                                    <img src="images/responsive/{{$image}}" alt="Los Angeles" style="width:100%;">
-                                    <div class="carousel-caption">
-                                        <span class="caption-slide">{{$project['Name']}}</span>
+                            @if(!empty($list_image))
+                                @foreach($list_image as $key => $image)
+                                    <div class="item @if($key == 0) active @endif ">
+                                        <img src="images/responsive/{{$image}}" alt="Los Angeles" style="width:100%;">
+                                        <div class="carousel-caption">
+                                            <span class="caption-slide">{{$project['name']}}</span>
+                                        </div>
                                     </div>
-                                </div>
-                            @endforeach
-                        @endif
+                                @endforeach
+                            @endif
+                        </div>
+
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarouse2" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarouse2" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
-
-                    <!-- Left and right controls -->
-                    <a class="left carousel-control" href="#myCarouse2" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#myCarouse2" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
                 </div>
-            </div>
-            <div class="col-md-5 animate-box">
+                <div class="col-md-5 animate-box">
 
-                <iframe width="100%" height="326px" src="{{$project['video']}}" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="100%" height="326px" src="{{$project['videos']}}" frameborder="0" allowfullscreen></iframe>
 
-            </div>
+                </div>
             @endif
         </div>
     </div>

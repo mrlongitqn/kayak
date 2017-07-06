@@ -13,16 +13,20 @@ class News extends Model
         if (empty($category_id)){
             return [];
         }
-        $list_tour = $this->select('news.Id','news.Name','news.Intro','news.ImageFeature','news.video','news.Content','news.CategoryId')
-            ->leftJoin('Categories', 'news.CategoryId','Categories.Id')
+        $list_tour = $this->select('news.id','news.name','news.intro','news.image_feature','news.videos','news.content','news.category_id')
+            ->leftJoin('categories', 'news.category_id','categories.id')
             ->where('news.Status','=',0)
-            ->where('categories.Status','=',0)
-            ->where('news.CategoryId','=',$category_id);
+            ->where('categories.status','=',0)
+            ->where('news.category_id','=',$category_id);
         if (in_array('top',$options)) {
             $list_tour =  $list_tour->limit(1);
-            return $list_tour->first()->toArray();
+            $list_tour = $list_tour->first();
+
+            return (empty($list_tour)) ? [] : $list_tour->toArray();
         }
 
-        return $list_tour->get()->toArray();
+        $list_tour = $list_tour->get();
+
+        return (empty($list_tour)) ? []:$list_tour->toArray();
     }
 }

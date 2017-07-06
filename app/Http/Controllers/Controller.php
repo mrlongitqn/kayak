@@ -15,7 +15,7 @@ class Controller extends BaseController
 
     public function _render($content_layout, $view_data = [])
     {
-        $view_data['category_menu'] = Category::where('ParentId',1)->get()->toArray();
+        $view_data['category_menu'] = Category::where('parent_id',1)->get()->toArray();
 
         $view_data['slide_image'] = Slide::limit(4)->get()->toArray();
 
