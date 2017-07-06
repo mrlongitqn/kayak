@@ -56,7 +56,7 @@
         </div>
         <div class="clearfix"></div>
         <div class="text-center">
-            <a href="#" class="button-book"><img src="/images/booknow.png" /></a>
+            <a href="/booktour/{{$tour_detail['id']}}" class="button-book"><img src="/images/booknow.png" /></a>
         </div>
     </div>
     <div class="clearfix"></div>
