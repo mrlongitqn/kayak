@@ -20,7 +20,7 @@
                 </div>
 
             @endif
-            {!! Form::open(array('method'=>'post','url'=>action('Admin\TourController@save', ['id' => 0]),"class"=>"form-horizontal")) !!}
+            {!! Form::open(array('method'=>'post','url'=>action('Admin\TourController@save', ['id' => 0]),"class"=>"form-horizontal", 'enctype'=>'multipart/form-data')) !!}
             <div class="box-body">
                 <div class="form-group">
                     {!! Form::label('name','Tour Name', array('class'=>'col-sm-2 control-label')) !!}
@@ -94,7 +94,7 @@
                 <div class="form-group">
                     {!! Form::label('content','Tour Detail', array('class'=>'col-sm-2 control-label')) !!}
                     <div class="col-sm-10">
-                        <input  name="video" type="file" class="form-control">
+                        <textarea id="editor1" name="content" ></textarea>
                     </div>
                 </div>
 
@@ -111,7 +111,9 @@
     </div>
 @stop
 @section('scripts')
+    <script src="{{ asset('admin/bower_components/ckeditor/ckeditor.js') }}"></script>
     <script>
+        CKEDITOR.replace('editor1')
         $(function() {
             // Multiple images preview in browser
             var imagesPreview = function(input, placeToInsertImagePreview) {

@@ -13,11 +13,17 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class TourRequest extends FormRequest
 {
+    public function authorize()
+    {
+        return true;
+    }
     public function rules()
     {
         return [
             'name' => 'required',
-            'category_id'=>'required'
+            'category_id'=>'required',
+            'pickup'=>'required',
+            'duration'=>'required'
         ];
     }
 }

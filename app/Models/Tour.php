@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Tour extends Model
 {
     protected $table = 'tours';
-    protected $filable = ['id', 'name', 'tag', 'description', 'category_id', 'image_feature', 'images', 'videos', 'intro', 'content', 'pickup', 'duration', 'services', 'price', 'location', 'status'];
+    protected $fillable = ['id', 'name', 'tag', 'description', 'category_id', 'image_feature', 'images', 'videos', 'intro', 'content', 'pickup', 'duration', 'services', 'price', 'location', 'status'];
     
     public function get_list($category_id = null, $options = [])
     {
