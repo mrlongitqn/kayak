@@ -34,7 +34,7 @@ class TourController extends Controller
         if (!empty($categories)) {
             foreach ($categories as $category) {
 
-                $list_tours[$category['Name']] = $this->tour->get_list($category['Id'], ['tour']);
+                $list_tours[$category['name']] = $this->tour->get_list($category['id'], ['tour']);
             }
         }
 

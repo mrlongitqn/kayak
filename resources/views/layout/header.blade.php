@@ -42,7 +42,7 @@
                             </li>
                             @if(!empty($category_menu))
                                 @foreach($category_menu as $category)
-                                    <li><a href="/tour/{{$category['Id']}}">{{$category['Name']}}</a></li>
+                                    <li><a href="/tour/{{$category['id']}}">{{$category['name']}}</a></li>
                                 @endforeach
                             @endif
                         </ul>

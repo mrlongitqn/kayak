@@ -40,5 +40,7 @@ Route::get('/tour/{id}','TourController@get_list_by_category');
 
 Route::get('/tour/detail/{id}','TourController@get_detail');
 
-
 Route::get('/projects','ProjectController@get_list');
+
+Route::any('/booktour/{id}','BooktourController@index');
+
