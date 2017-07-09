@@ -199,7 +199,7 @@
                 $('#old_feature div').addClass('active');
                 $('#feature_deleted').val('');
             }
-        })
+        });
 
         $('.item-image').click(function () {
             if ($(this).children('div').hasClass('active')) {

@@ -35,7 +35,7 @@
 
     <header class="main-header">
         <!-- Logo -->
-        <a href="{{url('')}}" class="logo">
+        <a href="{{url('/admin/booking')}}" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini">HKT</span>
             <!-- logo for regular state and mobile devices -->
@@ -82,9 +82,7 @@
                         </ul>
                     </li>
                     <!-- Control Sidebar Toggle Button -->
-                    <li>
-                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-                    </li>
+
                 </ul>
             </div>
         </nav>

@@ -13,5 +13,16 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class SlideRequest extends FormRequest
 {
-
+    public function authorize()
+    {
+        return true;
+    }
+    public function rules()
+    {
+        return [
+            'name' => 'required',
+            'caption'=>'required',
+            'image'=>'required',
+        ];
+    }
 }
