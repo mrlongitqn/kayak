@@ -9,11 +9,9 @@
 namespace App\Http\Controllers;
 
 
-use App\Models\Tour;
-use App\Models\News;
 use App\Models\Category;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\View;
+use App\Models\News;
+use App\Models\Tour;
 
 class TourController extends Controller
 {

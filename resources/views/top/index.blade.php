@@ -17,7 +17,7 @@
                 @foreach ($tours as $tour)
                     <a href="/tour/detail/{{$tour['id']}}">
                         <div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
-                            <div><img src="images/tours/{{$tour['image_feature']}}" alt="tours" class="img-responsive">
+                            <div><img src="{{asset('').$tour['image_feature']}}" alt="tours" class="img-responsive">
                                 <div class="category">
                                     <span>{{$tour['category_name']}}</span>
                                 </div>

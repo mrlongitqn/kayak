@@ -52,7 +52,7 @@
                 <div class="form-group">
                     {!! Form::label('image_feature','Image Feature', array('class'=>'col-sm-2 control-label')) !!}
                     <div class="col-sm-10">
-                        {!! Form::file('image_feature','' ,array('class'=>'form-control')) !!}
+                        <input id="image_feature" name="image_feature" type="file" class="form-control">
                     </div>
                 </div>
 
@@ -66,7 +66,14 @@
                 <div class="form-group">
                     {!! Form::label('videos','Video', array('class'=>'col-sm-2 control-label')) !!}
                     <div class="col-sm-10">
-                        <input id="file-video" name="video" type="file" class="form-control">
+                        {!! Form::text('videos','' ,array('class'=>'form-control', 'placeholder'=>'Enter link from Youtube, Vimeo')) !!}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    {!! Form::label('price','Price', array('class'=>'col-sm-2 control-label')) !!}
+                    <div class="col-sm-10">
+                        {!! Form::text('price','' ,array('class'=>'form-control')) !!}
                     </div>
                 </div>
 
@@ -85,16 +92,28 @@
                 </div>
 
                 <div class="form-group">
+                    {!! Form::label('services','Services', array('class'=>'col-sm-2 control-label')) !!}
+                    <div class="col-sm-10">
+                        <div id="img-services">
+                            @foreach($services as $service)
+                                <img src="{{asset('').$service}}" value="{{$service}}"/>
+                            @endforeach
+                        </div>
+                        <input type="hidden" name="services" id="services"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
                     {!! Form::label('intro','Intro', array('class'=>'col-sm-2 control-label')) !!}
                     <div class="col-sm-10">
-                       {!! Form::textarea('intro','', array('class'=>'form-control','size' => '30x5')) !!}
+                        {!! Form::textarea('intro','', array('class'=>'form-control','size' => '30x5')) !!}
                     </div>
                 </div>
 
                 <div class="form-group">
                     {!! Form::label('content','Tour Detail', array('class'=>'col-sm-2 control-label')) !!}
                     <div class="col-sm-10">
-                        <textarea id="editor1" name="content" ></textarea>
+                        <textarea id="editor1" name="content"></textarea>
                     </div>
                 </div>
 
@@ -113,30 +132,45 @@
 @section('scripts')
     <script src="{{ asset('admin/bower_components/ckeditor/ckeditor.js') }}"></script>
     <script>
-        CKEDITOR.replace('editor1')
-        $(function() {
-            // Multiple images preview in browser
-            var imagesPreview = function(input, placeToInsertImagePreview) {
+        CKEDITOR.editorConfig = function (config) {
+            config.toolbarGroups = [
+                {name: 'document', groups: ['mode', 'document', 'doctools']},
+                {name: 'clipboard', groups: ['clipboard', 'undo']},
+                {name: 'editing', groups: ['find', 'selection', 'spellchecker', 'editing']},
+                {name: 'forms', groups: ['forms']},
+                '/',
+                {name: 'basicstyles', groups: ['basicstyles', 'cleanup']},
+                {name: 'paragraph', groups: ['list', 'indent', 'blocks', 'align', 'bidi', 'paragraph']},
+                {name: 'links', groups: ['links']},
+                {name: 'insert', groups: ['insert']},
+                '/',
+                {name: 'styles', groups: ['styles']},
+                {name: 'colors', groups: ['colors']},
+                {name: 'tools', groups: ['tools']},
+                {name: 'others', groups: ['others']},
+                {name: 'about', groups: ['about']}
+            ];
+        };
 
-                if (input.files) {
-                    var filesAmount = input.files.length;
+        CKEDITOR.replace('editor1');
 
-                    for (i = 0; i < filesAmount; i++) {
-                        var reader = new FileReader();
 
-                        reader.onload = function(event) {
-                            $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
-                        }
+        $('#img-services img').click(function () {
+            var img = $(this);
 
-                        reader.readAsDataURL(input.files[i]);
-                    }
-                }
+            if (img.hasClass('selected')) {
+                img.removeClass('selected');
+            }
+            else {
+                img.addClass('selected');
+            }
+            var value = '';
+            $('#img-services .selected').each(function (index) {
+                value = value + ',' + $(this).attr('value');
+            })
 
-            };
-
-            $('#file-input').on('change', function() {
-                imagesPreview(this, 'div.preview');
-            });
+            var services = $('#services');
+            services.val(value);
         });
     </script>
 @stop

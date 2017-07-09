@@ -69,7 +69,7 @@ body{
     padding: 10px;
     font-weight: bold;
     background: rgba(0, 0, 0, 0.4);
-    font-size: 18pt;
+    font-size: 15pt;
     line-height: 18pt;
 }
 .fh5co-tours > div .desc span{
@@ -96,7 +96,7 @@ body{
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
-    width: 100px;
+    min-width: 100px;
 }
 .category span{
     display: block;

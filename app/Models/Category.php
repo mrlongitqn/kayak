@@ -15,7 +15,7 @@ class Category extends Model
             return [];
         }
         return $this->select('categories.id','categories.name')
-            ->where('categories.status','=',0)
+            ->where('categories.status','=',1)
             ->where('categories.parent_id','=',$category_id)
             ->get()->toArray();
     }

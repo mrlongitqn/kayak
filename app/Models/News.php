@@ -15,8 +15,8 @@ class News extends Model
         }
         $list_tour = $this->select('news.id','news.name','news.intro','news.image_feature','news.videos','news.content','news.category_id')
             ->leftJoin('categories', 'news.category_id','categories.id')
-            ->where('news.Status','=',0)
-            ->where('categories.status','=',0)
+            ->where('news.Status','=',1)
+            ->where('categories.status','=',1)
             ->where('news.category_id','=',$category_id);
         if (in_array('top',$options)) {
             $list_tour =  $list_tour->limit(1);

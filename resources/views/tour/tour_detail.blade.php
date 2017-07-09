@@ -9,13 +9,15 @@
                 </div>
             </div>
         </div>
-        <div  class="col-md-12 animate-box">
+        <div class="col-md-12 animate-box">
             @php
-                $list_service = explode(';',$tour_detail['services']);
+            $list_service = explode(',',$tour_detail['services']);
             @endphp
             @if(!empty($list_service))
                 @foreach($list_service as $service)
-                    <img src="\images\icon\{{$service}}" class="img-icon-list">
+                    @if($service!='')
+                        <img src="{{asset('').$service}}" class="img-icon-list">
+                    @endif
                 @endforeach
             @endif
         </div>
@@ -23,44 +25,37 @@
             <h5 class="heading-line">OVER VIEW:</h5>
             <p>Pick up: {{$tour_detail['pickup']}}</p>
             <p>Duration: {{$tour_detail['duration']}}</p>
-            <p>
-                {{$tour_detail['intro']}}
-            </p>
+            <h5 class="heading-line">TOUR PRICES: {{$tour_detail['price']}} </h5>
             <h5 class="heading-line">FULL ITINERARY</h5>
 
-            <p>{{$tour_detail['content']}}</p>
-            <h5 class="heading-line">TOUR PRICES </h5>
-            <p>Included:</p>
-            -
-            -
-            -
-            -
-            <p>NOT included:</p>
-            -
-            -
-            -
+            <div class="tour-content">{!! $tour_detail['content'] !!}</div>
+
+
         </div>
         <div class="col-md-4 animate-box">
             @php
-                $list_image = explode(';',$tour_detail['images']);
+            $list_image = explode(',',$tour_detail['images']);
             @endphp
             @if(!empty($list_image))
                 @foreach($list_image as $image)
                     <div class="img-detail">
-                        <img class="img-responsive" src="/images/tours/{{$image}}" alt="travel">
-                    </div>s
+                        <img class="img-responsive" src="{{asset('').$image}}" alt="travel">
+                    </div>
                 @endforeach
             @endif
-
-            <div class="video-container"><iframe width="560" height="315" src="{{$tour_detail['videos']}}" frameborder="0" allowfullscreen></iframe></div>
+            @if($tour_detail['videos']!='')
+                <div class="video-container">
+                    <iframe width="560" height="315" src="{{$tour_detail['videos']}}" frameborder="0"
+                            allowfullscreen></iframe>
+                </div>
+            @endif
         </div>
         <div class="clearfix"></div>
         <div class="text-center">
-            <a href="/booktour/{{$tour_detail['id']}}" class="button-book"><img src="/images/booknow.png" /></a>
+            <a href="/booktour/{{$tour_detail['id']}}" class="button-book"><img src="/images/booknow.png"/></a>
         </div>
     </div>
     <div class="clearfix"></div>
-
 
 
 </div>

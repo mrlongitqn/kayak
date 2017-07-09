@@ -27,8 +27,8 @@
                                     <div class="item active">
                                         <a href="tour/detail/{{$tour['id']}}" target="_blank">
                                             <div class="col-md-4 col-sm-6 fh5co-tours" >
-                                                <div class="mini-view" href="images/tours/{{$tour['image_feature']}}" data-fancybox-title="{{$tour['description']}}">
-                                                    <img src="images/tours/{{$tour['image_feature']}}" alt="tours" class="img-responsive">
+                                                <div class="mini-view" href="{{asset('').$tour['image_feature']}}" data-fancybox-title="{{$tour['description']}}">
+                                                    <img src="{{asset('').$tour['image_feature']}}" alt="tours" class="img-responsive">
                                                     <div class="price">
 
 

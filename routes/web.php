@@ -24,8 +24,14 @@ Route::group(array('prefix' => '/admin', 'namespace' => 'Admin', 'middleware' =>
     //Tours
     Route::resource('tour', 'TourController');
     Route::post('tour/save/{id}', 'TourController@save');
-});
+    Route::post('tour/delete', 'TourController@delete');
 
+    //Booking
+    Route::get('booking/','BookingController@index');
+    Route::get('booking/detail/{id}', 'BookingController@detail');
+    Route::post('booking/delete','BookingController@delete');
+});
+Route::get('auth/logout', 'Auth\LoginController@logout');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -42,5 +48,6 @@ Route::get('/tour/detail/{id}','TourController@get_detail');
 
 Route::get('/projects','ProjectController@get_list');
 
-Route::any('/booktour/{id}','BooktourController@index');
+Route::get('/booktour/{id}','BooktourController@getIndex');
+Route::post('/booktour/{id}','BooktourController@index');
 
