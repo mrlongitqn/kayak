@@ -15,7 +15,7 @@
                 @foreach($list_tours as $tour)
                     <a href="/tour/detail/{{$tour['id']}}" target="_blank">
                         <div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
-                            <div href="#"><img src="/images/tours/{{$tour['image_feature']}}" class="img-responsive">
+                            <div href="#"><img src="{{asset('')}}{{$tour['image_feature']}}" class="img-responsive">
                             </div>
                         </div>
                     </a>
@@ -34,14 +34,15 @@
                     <div class="col-md-2 col-sm-6 animate-box" data-animate-effect="fadeIn">
                         <ul class="ul-list-icon">
                             @php
-                                $list_services = explode(';',$tour['services']);
-
+                                $list_services = explode(',',$tour['services']);
                             @endphp
                             @if(!empty($list_services))
                                 @foreach($list_services as $service)
+                                    @if(!empty($service))
                                     <li>
-                                        <img src="\images\icon\{{$service}}" class="img-icon-list">
+                                        <img src="{{asset('')}}{{$service}}" class="img-icon-list">
                                     </li>
+                                    @endif
                                 @endforeach
                             @endif
                         </ul>
@@ -51,9 +52,6 @@
                 @endforeach
                 @endif
             </div>
-
-
-
 
             <!--RESPONSIBLE TRAVEL PROJECTS-->
     </div>

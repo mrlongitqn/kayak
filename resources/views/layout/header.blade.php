@@ -35,11 +35,8 @@
                 <ul class="sf-menu" id="fh5co-primary-menu">
                     <li><a href="/">HOME</a></li>
                     <li>
-                        <a class="fh5co-sub-ddown">TOURS</a>
+                        <a  href="/alltours" class="fh5co-sub-ddown">TOURS</a>
                         <ul class="fh5co-sub-menu">
-
-                            <li><a href="/alltours">All tours</a>
-                            </li>
                             @if(!empty($category_menu))
                                 @foreach($category_menu as $category)
                                     <li><a href="/tour/{{$category['id']}}">{{$category['name']}}</a></li>
