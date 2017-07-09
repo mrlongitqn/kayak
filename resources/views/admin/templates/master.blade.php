@@ -163,8 +163,7 @@
         <!-- Main content -->
         <section class="content">
             @yield('content')
-
-
+            <div class="clearfix"></div>
         </section>
         <!-- /.content -->
     </div>

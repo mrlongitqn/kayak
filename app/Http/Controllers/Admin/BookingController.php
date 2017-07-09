@@ -17,7 +17,6 @@ class BookingController extends Controller
 {
     public function index(Request $request)
     {
-
         if(isset($request->keyword))
             $booking = Booktour::orWhere('fullname','like','%'.$request->keyword.'%')
                 ->orWhere('tour_name','like','%'.$request->keyword.'%')
@@ -32,6 +31,10 @@ class BookingController extends Controller
     }
 
     public function detail($id){
-
+        $booking = Booktour::find($id);
+        if($booking==null){
+            return redirect(url('admin/booking/'));
+        }
+        return view('admin.booking.detail')->with('booking',$booking);
     }
 }

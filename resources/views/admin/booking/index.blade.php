@@ -32,6 +32,7 @@ $i = 1;
                     <th>Phone</th>
                     <th>Desired Start Date</th>
                     <th>Tour</th>
+                    <th>Status</th>
                     <th style="width: 50px"></th>
                 </tr>
 
@@ -40,7 +41,7 @@ $i = 1;
                         <td>{{$i++}}</td>
                         <td>{{$book->fullname}}</td>
                         <td>
-                           {{$book->phone}}
+                            {{$book->phone}}
                         </td>
                         <td>
                             {{$book->desired_start_date}}
@@ -48,7 +49,17 @@ $i = 1;
                         <td>
                             {{$book->tour_name}}
                         </td>
-
+                        <td>
+                            @if($book->status==0)
+                                <span class="label label-info">
+                                    New
+                                </span>
+                            @else
+                                <span class="label label-primary">
+                                Resolved
+                                </span>
+                            @endif
+                        </td>
                         <td>
                             <a href="{{action('Admin\BookingController@detail', ['id' => $book->id])}}"
                                title="Detail"><i class="fa fa-info-circle"></i></a>
