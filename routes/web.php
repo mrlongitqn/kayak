@@ -44,6 +44,12 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 
         'as' => 'admin',
         'uses' => 'UsersController@getMemberList'
     ]);
+
+    //Slide
+    Route::get('user', 'UserController@index');
+    Route::get('user/edit/{id}', 'UserController@edit');
+    Route::post('user/delete', 'UserController@delete');
+
 });
 Route::get('auth/logout', 'Auth\LoginController@logout');
 Auth::routes();
