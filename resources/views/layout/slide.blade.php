@@ -14,7 +14,7 @@
             @if($slide_image)
                 @foreach($slide_image as $key => $slide)
                 <div class="item @if($key == 0) active @endif">
-                    <img src="/images/slide/{{$slide['image']}}" alt="Los Angeles">
+                    <img src="{{asset('')}}images/slide/{{$slide['image']}}" alt="Los Angeles">
                 </div>
                 @endforeach
             @endif

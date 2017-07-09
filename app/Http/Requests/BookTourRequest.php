@@ -28,10 +28,13 @@ class BookTourRequest extends FormRequest
         return [
 
             'fullname'=>'required',
-            'email'=>'required',
-            'phone'=>'required',
-            'desired_start_date'=>'required',
-            'number_of_adults'=>'required',
+            'email'=>'required|confirmed|email',
+            'email_confirmation'=>'required|email',
+            'phone'=>'required|numeric',
+            'desired_start_date'=>'required|date',
+            'number_of_adults'=>'required|numeric',
+            'number_of_children_under4years_old'=>'required|numeric',
+            'number_of_children_over4years_old'=>'required|numeric',
 
         ];
     }

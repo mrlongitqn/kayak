@@ -35,12 +35,10 @@ class BooktourController extends Controller
 
     public function index($id, BooktourRequest $request)
     {
-        var_dump($request);
-        exit();
         $tour_name = $this->tour->get_detail($id)['name'];
 
-        $data = $request->except('_token', 'email-confirm', 'contact');
-        $data['tour_id'] = 1;
+        $data = $request->except('_token', 'email_confirmation');
+        $data['tour_id'] = $id;
         $data['tour_name'] = $tour_name;
         $data['status'] = 0;
         $ldate = date('Y-m-d H:i:s');
