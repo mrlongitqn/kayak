@@ -48,6 +48,7 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 
     //Slide
     Route::get('user', 'UserController@index');
     Route::get('user/edit/{id}', 'UserController@edit');
+    Route::post('user/save/{id}', 'UserController@save');
     Route::post('user/delete', 'UserController@delete');
 
 });

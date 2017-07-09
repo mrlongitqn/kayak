@@ -33,10 +33,13 @@ class UserController extends Controller
     {
         $data = User::find($id)->toArray();
 
-        dd($data);
+//        dd($data);
         return $this->_render('admin.user.edit',['user' => $data]);
     }
 
+    public function save() {
+
+    }
 
     public function delete(Request $request)
     {
