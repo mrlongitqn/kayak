@@ -37,4 +37,20 @@ class BookingController extends Controller
         }
         return view('admin.booking.detail')->with('booking',$booking);
     }
+
+    public function resolved($id){
+        $booking = Booktour::find($id);
+        if($booking==null){
+            return redirect(url('admin/booking/'));
+        }
+        $booking->status = 1;
+        $booking->save();
+        return redirect(url('admin/booking/'));
+    }
+
+    public function delete(Request $request){
+        $booking = Booktour::find($request->id);
+        $booking->delete();
+        return redirect(url('admin/booking/'));
+    }
 }

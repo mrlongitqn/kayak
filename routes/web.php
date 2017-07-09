@@ -30,6 +30,20 @@ Route::group(array('prefix' => '/admin', 'namespace' => 'Admin', 'middleware' =>
     Route::get('booking/','BookingController@index');
     Route::get('booking/detail/{id}', 'BookingController@detail');
     Route::post('booking/delete','BookingController@delete');
+    Route::get('booking/resolved/{id}','BookingController@resolved');
+
+    //Responnsible travel
+    Route::get('responsible','ResponsibleController@index');
+    Route::get('responsible/create','ResponsibleController@create');
+    Route::get('responsible/edit/{id}','ResponsibleController@edit');
+    Route::post('responsible/save/{id}','ResponsibleController@save');
+    Route::post('responsible/delete','ResponsibleController@delete');
+    //Slide
+    Route::get('slide', 'SlideController@index');
+    Route::get('slide/create', 'SlideController@create');
+    Route::get('slide/edit/{id}', 'SlideController@edit');
+    Route::post('slide/save/{id}', 'SlideController@save');
+    Route::post('slide/delete', 'SlideController@delete');
 });
 Route::get('auth/logout', 'Auth\LoginController@logout');
 Auth::routes();

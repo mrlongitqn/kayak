@@ -3,6 +3,7 @@ $i = 1;
 ?>
 @extends('admin.templates.master')
 @section('header','Manage Booking')
+@section('title','Manage Booking')
 @section('content')
     <div class="box">
         <div class="box-header with-border">
@@ -51,7 +52,7 @@ $i = 1;
                         </td>
                         <td>
                             @if($book->status==0)
-                                <span class="label label-info">
+                                <span class="label label-warning">
                                     New
                                 </span>
                             @else
@@ -62,9 +63,9 @@ $i = 1;
                         </td>
                         <td>
                             <a href="{{action('Admin\BookingController@detail', ['id' => $book->id])}}"
-                               title="Detail"><i class="fa fa-info-circle"></i></a>
+                               title="Detail" class="text-green"><i class="fa fa-info-circle"></i></a>
                             <a href="javascript:;" onclick="deleteModal('{{$book->id}}', '/admin/booking/delete')"
-                               title="Delete" class="red"><i class="fa fa-trash-o"></i></a>
+                               title="Delete" class="text-red"><i class="fa fa-trash-o"></i></a>
                         </td>
                     </tr>
 

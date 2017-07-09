@@ -12,7 +12,7 @@ $list = $categories->toArray();
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-            <a class="btn btn-warning" href="{{action("Admin\CategoryController@create")}}">Create</a>
+            <a class="btn btn-warning" href="{{action("Admin\CategoryController@create")}}">Create new category</a>
             <br/>
             <br/>
             <table class="table table-bordered">
@@ -41,9 +41,11 @@ $list = $categories->toArray();
                         </td>
                         <td>
                             <a href="{{action('Admin\CategoryController@edit', ['id' => $cat->id])}}"
-                               title="Cập nhật"><i class="fa fa-pencil"></i></a>
-                            <a href="javascript:;" onclick="deleteModal('{{$cat->id}}', '/admin/category/destroy')"
-                               title="Xóa" class="red"><i class="fa fa-trash-o"></i></a>
+                               title="Cập nhật" class="text-green"><i class="fa fa-pencil"></i></a>
+                            @if($cat->id>3)
+                                <a href="javascript:;" onclick="deleteModal('{{$cat->id}}', '/admin/category/destroy')"
+                                   title="Xóa" class="text-red"><i class="fa fa-trash-o"></i></a>
+                            @endif
                         </td>
                     </tr>
 
