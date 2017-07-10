@@ -45,8 +45,9 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 
         'uses' => 'UsersController@getMemberList'
     ]);
 
-    //Slide
+    //User
     Route::get('user', 'UserController@index');
+    Route::get('user/create', 'UserController@create');
     Route::get('user/edit/{id}', 'UserController@edit');
     Route::post('user/save/{id}', 'UserController@save');
     Route::post('user/delete', 'UserController@delete');
@@ -71,3 +72,7 @@ Route::get('/projects', 'ProjectController@get_list');
 
 Route::get('/booktour/{id}', 'BooktourController@getIndex');
 Route::post('/booktour/{id}', 'BooktourController@index');
+
+Route::get('/manage', function(){
+    return redirect('admin/booking');
+});

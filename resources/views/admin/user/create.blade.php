@@ -1,21 +1,21 @@
 @extends('admin.templates.master')
-@section('title','Update User')
+@section('title','Create User')
 @section("content")
     <div class="col-xs-12">
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">Update User</h3>
+                <h3 class="box-title">Create User</h3>
             </div>
             <div class="box-body">
                 <form class="form-horizontal" method="POST"
-                      action="{{action('Admin\UserController@save', ['id' => $user['id']])}}">
+                      action="{{action('Admin\UserController@save', ['id' => 0])}}">
                     {{ csrf_field() }}
 
                     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                         <label for="name" class="col-md-2 control-label">Full Name</label>
 
                         <div class="col-md-4">
-                            <input id="name" type="text" class="form-control" name="name" value="{{ $user['name'] }}"
+                            <input id="name" type="text" class="form-control" name="name" placeholder="Full Name" value="{{old('name')}}"
                                    required autofocus>
 
                             @if ($errors->has('name'))
@@ -31,7 +31,7 @@
 
                         <div class="col-md-4">
                             <input id="email" type="email" class="form-control" name="email"
-                                   value="{{ $user['email'] }}" required>
+                                   value="{{ old('email') }}" placeholder="Email" required>
                             @if ($errors->has('email'))
                                 <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -44,15 +44,14 @@
                         <label for="email" class="col-md-2 control-label">Password</label>
 
                         <div class="col-md-4">
-                            <input id="email" type="password" class="form-control" name="new_password"
-                                   placeholder="Blank if not change">
-                            @if ($errors->has('new_password'))
+                            <input id="email" type="password" class="form-control" name="password"
+                                   placeholder="Password">
+                            @if ($errors->has('password'))
                                 <span class="help-block">
-                                        <strong>{{ $errors->first('new_password') }}</strong>
+                                        <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                             @endif
                         </div>
-                        <input type="hidden" name="password" value="password" />
                     </div>
 
                     <div class="form-group">
