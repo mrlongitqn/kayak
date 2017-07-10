@@ -49,27 +49,33 @@
             </div>
             @if(!empty($project))
                 <div class="col-md-7 animate-box">
+                    @php $list_image = explode(',', $project['image_feature']); $i=0; $j=0 @endphp
                     <div id="myCarouse2" class="carousel slide" data-ride="carousel">
                         <!-- Indicators -->
                         <ol class="carousel-indicators">
-                            <li data-target="#myCarouse2" data-slide-to="0" class="active"></li>
-                            <li data-target="#myCarouse2" data-slide-to="1"></li>
-                            <li data-target="#myCarouse2" data-slide-to="2"></li>
+                            @if(!empty($list_image))
+                                @foreach($list_image as $key => $image)
+                                    @if(!empty($image))
+                                        <li data-target="#myCarouse2" class="<?php if($i==0) echo 'active';?>" data-slide-to="{{$i++}}" ></li>
+                                    @endif
+                                @endforeach
+                            @endif
                         </ol>
 
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
 
-                            @php $list_image = explode(';', $project['image_feature']) @endphp
 
                             @if(!empty($list_image))
                                 @foreach($list_image as $key => $image)
-                                    <div class="item @if($key == 0) active @endif ">
-                                        <img src="images/responsive/{{$image}}" alt="Los Angeles" style="width:100%;">
-                                        <div class="carousel-caption">
-                                            <span class="caption-slide">{{$project['name']}}</span>
+                                    @if(!empty($image))
+                                        <div class="item<?php if($j==0) echo ' active'; $j++;?>">
+                                            <img src="{{asset('').$image}}" style="width:100%;">
+                                            <div class="carousel-caption">
+                                                <span class="caption-slide">{{$project['name']}}</span>
+                                            </div>
                                         </div>
-                                    </div>
+                                    @endif
                                 @endforeach
                             @endif
                         </div>
@@ -87,7 +93,8 @@
                 </div>
                 <div class="col-md-5 animate-box">
 
-                    <iframe width="100%" height="326px" src="{{$project['videos']}}" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="100%" height="326px" src="{{$project['videos']}}" frameborder="0"
+                            allowfullscreen></iframe>
 
                 </div>
             @endif
