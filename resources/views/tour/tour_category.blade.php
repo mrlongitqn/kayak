@@ -25,7 +25,7 @@
                         <p>
                             Pick up: {{$tour['pickup']}}<br/>
                             Duration: {{$tour['duration']}}<br/>
-                            Price starts from: USD {{$tour['price']}}/PAX<br/>
+                            Price starts from: {{$tour['price']}} USD<br/>
                         </p>
                         <p>{{$tour['intro']}}</p>
                         <a href="/tour/detail/{{$tour['id']}}" class=" label-info read_more">Read More <i class="icon-arrow-right22"></i></a>
