@@ -19,8 +19,8 @@
                 <div class="col-md-3 f-right">
                     <p class="fh5co-social-icons social-top">
                         <a href="#"><i class="icon-twitter2"></i></a>
-                        <a href="#"><i class="icon-facebook2"></i></a>
-                        <a href="#"><i class="icon-instagram"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100011444329204" target="_blank"><i class="icon-facebook2"></i></a>
+                        <a href="https://www.instagram.com/hoiankayaktours/" target="_blank"><i class="icon-instagram"></i></a>
                         <a href="#"><i class="icon-pinterest2"></i></a>
                     </p>
                 </div>

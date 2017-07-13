@@ -22,10 +22,10 @@
 
                     <div class="col-md-6 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
                         <a href="/tour/detail/{{$tour['id']}}" target="_blank"><h2>{{$tour['name']}}</h2></a>
-                        <label class="price-list">${{$tour['price']}}</label>
                         <p>
                             Pick up: {{$tour['pickup']}}<br/>
                             Duration: {{$tour['duration']}}<br/>
+                            Price starts from: USD {{$tour['price']}}/PAX<br/>
                         </p>
                         <p>{{$tour['intro']}}</p>
                         <a href="/tour/detail/{{$tour['id']}}" class=" label-info read_more">Read More <i class="icon-arrow-right22"></i></a>

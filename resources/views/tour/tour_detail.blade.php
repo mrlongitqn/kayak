@@ -25,7 +25,6 @@
             <h5 class="heading-line">OVER VIEW:</h5>
             <p>Pick up: {{$tour_detail['pickup']}}</p>
             <p>Duration: {{$tour_detail['duration']}}</p>
-            <h5 class="heading-line">TOUR PRICES: {{$tour_detail['price']}} </h5>
             <h5 class="heading-line">FULL ITINERARY</h5>
 
             <div class="tour-content">{!! $tour_detail['content'] !!}</div>

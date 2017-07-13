@@ -25,19 +25,35 @@
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-12 fh5co-footer-link">
                     <h3>CONTACT US</h3>
-                    <ul>
-
-
-
-
-
-                        <li><a href="#"> Email:</a>
-                        </li>
-                        <li><a href="#">Hotline:</a>
-                        </li>
-                        <li><a href="#">Address:</a>
-                        </li>
-                    </ul>
+                        <table>
+                            <tr>
+                                <td>Email:</td>
+                                <td>hoiankayaktours@gmail.com
+                                </td>
+                            </tr>
+                           <tr>
+                                <td></td>
+                                <td>info@hoiankayaktours.com</td>
+                            </tr>
+                            <tr>
+                                <td>Hotline:</td>
+                                <td>+84 9 7943 7338
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>+84 9 1664 5858</td>
+                            </tr>
+                            <tr>
+                                <td>Address:</td>
+                                <td>Thuan Tinh Pier - Tran Nhan Tong Street
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Hamlet 2 - Cam Thanh Village, Hoi An City, Vietnam</td>
+                            </tr>
+                        </table>
                 </div>
             </div>
         </div>
