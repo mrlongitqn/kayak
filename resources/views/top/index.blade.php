@@ -21,11 +21,12 @@
                                 <div class="category">
                                     <span>{{$tour['category_name']}}</span>
                                 </div>
-                                <div class="price">
-                                    <span class="text">USD {{$tour['price']}}/PAX</span>
-                                </div>
+
                                 <div class="desc">
                                     <span>{{$tour['name']}}</span>
+                                    <div class="price">
+                                        <span class="text">USD {{$tour['price']}}/PAX</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
