@@ -36,8 +36,8 @@ class News extends Model
             ->where('categories.status', '=', 1)
             ->where('news.category_id', '=', $category_id);
         if (in_array('top', $options)) {
-            $list_tour = $list_tour->limit(1);
-            $list_tour = $list_tour->first();
+            $list_tour = $list_tour->limit(3);
+            $list_tour = $list_tour->get();
 
             return (empty($list_tour)) ? [] : $list_tour->toArray();
         }

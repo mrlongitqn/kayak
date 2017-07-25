@@ -91,8 +91,12 @@
                 <div class="form-group">
                     <label class="control-label col-sm-5" for="email">Would you like to go on a</label>
                     <div class="col-sm-7">
-                        <input type="text" class="form-control" id="would_you_like_to_go_on_a"
-                               placeholder="Would you like to go on a" name="would_you_like_to_go_on_a" value="{{ old('would_you_like_to_go_on_a') }}">
+                        <div class="radio-inline">
+                            <label><input type="radio" name="would_you_like_to_go_on_a" value="private" checked >private</label>
+                        </div>
+                        <div class="radio-inline">
+                            <label><input type="radio" name="would_you_like_to_go_on_a" value="join group">join group</label>
+                        </div>
                         <label style="color: red; font-size: 13px">
                             @if($errors->has('would_you_like_to_go_on_a'))
                             {{ $errors->first('would_you_like_to_go_on_a') }}

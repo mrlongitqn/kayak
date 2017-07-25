@@ -48,37 +48,31 @@
                     <h3 class="title__primary">RESPONSIBLE TRAVEL PROJECTS</h3>
                 </div>
             </div>
-            @if(!empty($project))
+            @if(!empty($projects))
                 <div class="col-md-7 animate-box">
-                    @php $list_image = explode(',', $project['image_feature']); $i=0; $j=0 @endphp
+                    @php  $i=0; $j=0 @endphp
                     <div id="myCarouse2" class="carousel slide" data-ride="carousel">
                         <!-- Indicators -->
                         <ol class="carousel-indicators">
-                            @if(!empty($list_image))
-                                @foreach($list_image as $key => $image)
+                                @foreach($projects as $key => $image)
                                     @if(!empty($image))
                                         <li data-target="#myCarouse2" class="<?php if($i==0) echo 'active';?>" data-slide-to="{{$i++}}" ></li>
                                     @endif
                                 @endforeach
-                            @endif
                         </ol>
 
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
-
-
-                            @if(!empty($list_image))
-                                @foreach($list_image as $key => $image)
+                                @foreach($projects as $key => $project)
                                     @if(!empty($image))
                                         <div class="item<?php if($j==0) echo ' active'; $j++;?>">
-                                            <img src="{{asset('').$image}}" style="width:100%;">
+                                            <img src="{{asset('').$project['image_feature']}}" style="width:100%;">
                                             <div class="carousel-caption">
                                                 <span class="caption-slide">{{$project['name']}}</span>
                                             </div>
                                         </div>
                                     @endif
                                 @endforeach
-                            @endif
                         </div>
 
                         <!-- Left and right controls -->
@@ -94,7 +88,7 @@
                 </div>
                 <div class="col-md-5 animate-box">
 
-                    <iframe width="100%" height="326px" src="{{$project['videos']}}" frameborder="0"
+                    <iframe width="100%" height="326px" src="{{$projects[0]['videos']}}" frameborder="0"
                             allowfullscreen></iframe>
 
                 </div>

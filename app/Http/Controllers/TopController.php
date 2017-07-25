@@ -33,7 +33,7 @@ class TopController extends Controller
 
         return $this->_render("top/index",[
             'tours' => $tours,
-            'project' => $project
+            'projects' => $project
         ]);
     }
 }

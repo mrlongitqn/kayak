@@ -340,7 +340,18 @@ body {
 .ul-list-icon {
     list-style: none;
 }
+#footer .fh5co-footer-link table tr td{
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+    font-size: 14px;
+    padding-left: 1em;
+    padding-top: 5px
 
+}
+
+.ul-list-icon{
+    list-style: none;
+}
 .ul-list-icon .img-icon-list {
     width: 46px;
     padding-bottom: 4px;
