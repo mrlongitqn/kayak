@@ -27,46 +27,19 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>Danang airport to Danang</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                  <tr>
-                      <td>Danang airport to Hoi An</td>
-                      <td>35 km</td>
-                      <td>40 minutes</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                </tr>
-                  <tr>
-                    <td>Danang airport to Lang Co beach</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                  <tr>
-                    <td>Danang airport to Hue</td>
-                    <td>110 km</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                  <tr>
-                    <td>Danang airport to Hoi An</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                @if(!empty($da_nang))
+                    @foreach($da_nang as $car_da_nang)
+                        <tr>
+                            <td>{{$car_da_nang->route}}</td>
+                            <td>{{$car_da_nang->distance}} km</td>
+                            <td>{{$car_da_nang->duration}} minute</td>
+                            <td>{{$car_da_nang->price_4seat}} usd</td>
+                            <td>{{$car_da_nang->price_7seat}} usd</td>
+                            <td>{{$car_da_nang->price_16seat}} usd</td>
+
+                        </tr>
+                    @endforeach
+                @endif
 
                 </tbody>
             </table>
@@ -89,39 +62,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Hoi An to Hue via Hai Van tunnels
-                        </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Hoi An to Hue via Hai Van pass</td>
-                        <td>35 km</td>
-                        <td>40 minutes</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Hoi An to Lang Co beach via Hai Van tunnels</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Hoi An to Lang Co beach via Hai Van</td>
-                        <td>110 km</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                    @if(!empty($hoi_an))
+                        @foreach($hoi_an as $car_hoi_an)
+                            <tr>
+                                <td>{{$car_hoi_an->route}}</td>
+                                <td>{{$car_hoi_an->distance}} km</td>
+                                <td>{{$car_hoi_an->duration}} minute</td>
+                                <td>{{$car_hoi_an->price_4seat}} usd</td>
+                                <td>{{$car_hoi_an->price_7seat}} usd</td>
+                                <td>{{$car_hoi_an->price_16seat}} usd</td>
+
+                            </tr>
+                        @endforeach
+                    @endif
                 </tbody>
             </table>
         </div>

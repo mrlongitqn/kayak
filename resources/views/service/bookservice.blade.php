@@ -20,26 +20,50 @@
                             <label class="control-label col-sm-5" for="email">Full name</label>
                             <div class="col-sm-7">
                                 <input type="text" class="form-control" id="uname" value="{{ old('fullname') }}" placeholder="Full name" name="fullname">
+                                <label style="color: red; font-size: 13px">
+                                    @if($errors->has('fullname'))
+                                        {{ $errors->first('fullname') }}
+                                    @endif
+                                </label>
                             </div>
+
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-5" for="email">Email address</label>
                             <div class="col-sm-7">
-                                <input type="email" class="form-control" id="email" placeholder="Email address" value="{{ old('email') }}" name="email">
+                                <input type="text" class="form-control" id="email" placeholder="Email address" value="{{ old('email') }}" name="email">
+                                <label style="color: red; font-size: 13px">
+                                    @if($errors->has('email'))
+                                        {{ $errors->first('email') }}
+                                    @endif
+                                </label>
                             </div>
+
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-5" for="email">Confirm email</label>
                             <div class="col-sm-7">
-                                <input type="email" class="form-control" id="email-confirm" placeholder="Confirm email"
+                                <input type="text" class="form-control" id="email-confirm" placeholder="Confirm email"
                                        name="email_confirmation" value="{{ old('email_confirmation') }}">
+                                <label style="color: red; font-size: 13px">
+                                    @if($errors->has('email_confirmation'))
+                                        {{ $errors->first('email_confirmation') }}
+                                    @endif
+                                </label>
                             </div>
+
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-5" for="phone">Phone number</label>
                             <div class="col-sm-7">
                                 <input type="text" class="form-control" id="phone" placeholder="Phone number" name="phone" value="{{ old('phone') }}">
+                                <label style="color: red; font-size: 13px">
+                                    @if($errors->has('phone'))
+                                        {{ $errors->first('phone') }}
+                                    @endif
+                                </label>
                             </div>
+
                         </div>
                         <div class="col-md-12">
                             <h3 class="heading-line">Car rental form</h3>
@@ -48,43 +72,74 @@
                             <label class="control-label col-sm-5" for="route">Route</label>
                             <div class="col-sm-7">
                                 <select class="form-control" id="route" name="route">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
+                                    @if(!empty($service_car))
+                                        @foreach($service_car  as $route)
+                                            <option value="{{$route->id}}">{{$route->route}}</option>
+                                        @endforeach
+                                    @endif
                                 </select>
+                                <label style="color: red; font-size: 13px">
+                                    @if($errors->has('route'))
+                                        {{ $errors->first('route') }}
+                                    @endif
+                                </label>
                             </div>
+
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-5" for="email">Date of service (dd/mm/yy):</label>
                             <div class="col-sm-7">
-                                <input type="date" class="form-control" id="datepicker1" placeholder="Date of service"
+                                <input type="text" class="form-control" id="datepicker1" placeholder="Date of service"
                                        name="date_of_service" value="{{ old('date_of_service') }}">
+                                <label style="color: red; font-size: 13px">
+                                    @if($errors->has('date_of_service'))
+                                        {{ $errors->first('date_of_service') }}
+                                    @endif
+                                </label>
                             </div>
+
                         </div>
 
                         <div class="form-group">
                             <label class="control-label col-sm-5" for="email">Places of pick up</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control" id="places_of_pick_up" placeholder=Places of pick up"
+                                <input type="text" class="form-control" id="places_of_pick_up" placeholder="Places of pick up"
                                        name="places_of_pick_up" value="{{ old('places_of_pick_up') }}">
+                                <label style="color: red; font-size: 13px">
+                                    @if($errors->has('places_of_pick_up'))
+                                        {{ $errors->first('places_of_pick_up') }}
+                                    @endif
+                                </label>
                             </div>
+
                         </div>
 
                         <div class="form-group">
                             <label class="control-label col-sm-5" for="email">Time of pick up</label>
                             <div class="col-sm-7">
                                 <div class='input-group date'>
-                                    <input name="time_of_pick_up"  id='timepicker1' type='text' class="form-control" />
+                                    <input name="time_of_pick_up"  value="{{ old('time_of_pick_up') }}"  id='timepicker1' type='text' class="form-control" placeholder="Time of pick up"/>
                                 </div>
+                                <label style="color: red; font-size: 13px">
+                                    @if($errors->has('time_of_pick_up'))
+                                        {{ $errors->first('time_of_pick_up') }}
+                                    @endif
+                                </label>
                             </div>
+
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-5" for="email">Number of Adults</label>
                             <div class="col-sm-7">
                                 <input type="text" class="form-control" id="number_of_adults" placeholder="Number of Adults"
                                        name="number_of_adults" value="{{ old('number_of_adults') }}">
+                                <label style="color: red; font-size: 13px">
+                                    @if($errors->has('number_of_adults'))
+                                        {{ $errors->first('number_of_adults') }}
+                                    @endif
+                                </label>
                             </div>
+
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-5" for="email">Number of children (under 10  years old)
@@ -94,7 +149,13 @@
                                 <input type="text" class="form-control" id="number_of_children"
                                        placeholder="Number of children (under 10  years old)"
                                        name="number_of_children" value="{{ old('number_of_children') }}">
+                                <label style="color: red; font-size: 13px">
+                                    @if($errors->has('number_of_children'))
+                                        {{ $errors->first('number_of_children') }}
+                                    @endif
+                                </label>
                             </div>
+
                         </div>
 
                         <div class="form-group">
@@ -127,12 +188,12 @@
     $(function() {
         $('#timepicker1').timepicker({
             'showDuration': true,
-            'timeFormat': 'g:ia',
+            'timeFormat': 'h:i A',
             'scrollDefault': 'now'
         });
 
         $('#datepicker1').datepicker({
-            'format': 'yyyy-m-d',
+            'format': 'yyyy-mm-dd',
             'autoclose': true
         });
     });
