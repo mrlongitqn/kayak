@@ -10,6 +10,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Category;
 use App\Models\Tour;
+use App\Models\TourService;
 use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\TourRequest;
@@ -38,18 +39,19 @@ class TourController extends Controller
 
     public function edit($id)
     {
-        $files = Storage::files('images/icon');
-        $data['services'] = $files;
+//        $files = Storage::files('images/icon');
+//        $data['services'] = $files;
         $data['categories'] = Category::where('parent_id', 1)->pluck('name', 'id');
         $data['tour'] = Tour::find($id);
+        $data['services'] = TourService::all();
         return view('admin.tour.edit', $data);
     }
 
     public function create()
     {
-        $files = Storage::files('images/icon');
+        //$files = Storage::files('images/icon');
         $data['categories'] = Category::where('parent_id', 1)->pluck('name', 'id');
-        $data['services'] = $files;
+        $data['services'] = TourService::all();
         return view('admin.tour.create', $data);
     }
 
@@ -85,7 +87,6 @@ class TourController extends Controller
                     $images = $images . ',' . $img;
                 }
                 $images = substr($images, 1);
-
             }
             $images = join(',', $list_images) . ',' . $images;
             $tour->images = $images;

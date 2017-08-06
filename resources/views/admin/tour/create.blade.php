@@ -96,7 +96,7 @@
                     <div class="col-sm-10">
                         <div id="img-services">
                             @foreach($services as $service)
-                                <img src="{{asset('').$service}}" value="{{$service}}"/>
+                                <img src="{{asset('').$service->image}}" value="{{$service->id}}"/>
                             @endforeach
                         </div>
                         <input type="hidden" name="services" id="services"/>

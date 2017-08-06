@@ -16,7 +16,14 @@
             @if(!empty($list_service))
                 @foreach($list_service as $service)
                     @if($service!='')
-                        <img src="{{asset('').$service}}" class="img-icon-list">
+                        <?php
+                            $item = $services_tour->find($service);
+                        ?>
+                    @if($item!=null)
+                        <a href="{{$item->link}}" title="{{$item->name}}" target="_blank">
+                        <img src="{{asset('').$item->image}}" class="img-icon-list">
+                        </a>
+                        @endif
                     @endif
                 @endforeach
             @endif

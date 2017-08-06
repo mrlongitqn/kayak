@@ -15,22 +15,22 @@
 
             @if (!empty($tours))
                 @foreach ($tours as $tour)
-                    <a href="/tour/detail/{{$tour['id']}}">
-                        <div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
-                            <div><img src="{{asset('').$tour['image_feature']}}" alt="tours" class="img-responsive">
-                                <div class="category">
-                                    <span>{{$tour['category_name']}}</span>
-                                </div>
+                        <a href="/tour/detail/{{$tour['id']}}">
+                            <div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
+                                <div><img src="{{asset('').$tour['image_feature']}}" alt="tours" class="img-responsive">
+                                    <div class="category">
+                                        <span>{{$tour['category_name']}}</span>
+                                    </div>
 
-                                <div class="desc">
-                                    <span>{{$tour['name']}}</span>
-                                    <div class="price">
-                                        <span class="text">USD {{$tour['price']}}/PAX</span>
+                                    <div class="desc">
+                                        <span>{{$tour['name']}}</span>
+                                        <div class="price">
+                                            <span class="text">USD {{$tour['price']}}/PAX</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
                 @endforeach
             @endif
         </div>
@@ -44,7 +44,6 @@
         <div class="row">
             <div class="col-md-12 animate-box">
                 <div class="title title--big title--center title--decoration-bottom-center">
-
                     <h3 class="title__primary">RESPONSIBLE TRAVEL PROJECTS</h3>
                 </div>
             </div>

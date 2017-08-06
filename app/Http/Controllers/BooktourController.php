@@ -14,6 +14,7 @@ use App\Models\Booktour;
 use App\Models\Category;
 use App\Models\News;
 use App\Models\Tour;
+use Illuminate\Http\Request;
 
 class BooktourController extends Controller
 {
@@ -29,6 +30,7 @@ class BooktourController extends Controller
 
     public function getIndex($id)
     {
+
         $tour_name = $this->tour->get_detail($id)['name'];
         return $this->_render("booktour/index", ['tour_name' => $tour_name, 'tour_id' => $id]);
     }

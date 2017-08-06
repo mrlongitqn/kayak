@@ -12,6 +12,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\News;
 use App\Models\Tour;
+use App\Models\TourService;
 
 class TourController extends Controller
 {
@@ -49,9 +50,11 @@ class TourController extends Controller
         }
 
         $tours = $this->tour->get_list($category_id);
-
+        $services = TourService::all();
         return $this->_render("tour/tour_category", [
-            'list_tours' => $tours
+            'services_tour'=>$services,
+            'list_tours' => $tours,
+
         ]);
     }
 
@@ -62,8 +65,9 @@ class TourController extends Controller
         }
 
         $tour_detail = $this->tour->get_detail($tour_id);
-
+        $services = TourService::all();
         return $this->_render("tour/tour_detail", [
+            'services_tour'=>$services,
             'tour_detail' => $tour_detail
         ]);
 

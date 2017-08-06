@@ -127,10 +127,10 @@
                             $list_services = explode(',',$tour->services);
                             @endphp
                             @foreach($services as $service)
-                                @if(in_array($service, $list_services))
-                                    <img src="{{asset('').$service}}" value="{{$service}}" class="selected"/>
+                                @if(in_array($service->id, $list_services))
+                                    <img src="{{asset('').$service->image}}" value="{{$service->id}}" class="selected"/>
                                 @else
-                                    <img src="{{asset('').$service}}" value="{{$service}}"/>
+                                    <img src="{{asset('').$service->image}}" value="{{$service->id}}"/>
                                 @endif
                             @endforeach
                         </div>

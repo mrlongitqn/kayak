@@ -1,6 +1,5 @@
 @include('layout.master')
 @include('layout.header')
-
 <div id="fh5co-tours" class="fh5co-section-gray">
     <div class="container">
         @if(!empty($list_tours))
@@ -15,7 +14,7 @@
                 @foreach($list_tours as $tour)
                     <a href="/tour/detail/{{$tour['id']}}" target="_blank">
                         <div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
-                            <div href="#"><img src="{{asset('')}}{{$tour['image_feature']}}" class="img-responsive">
+                            <div><img src="{{asset('')}}{{$tour['image_feature']}}" class="img-responsive">
                             </div>
                         </div>
                     </a>
@@ -28,7 +27,8 @@
                             Price starts from: {{$tour['price']}} USD<br/>
                         </p>
                         <p>{{$tour['intro']}}</p>
-                        <a href="/tour/detail/{{$tour['id']}}" class=" label-info read_more">Read More <i class="icon-arrow-right22"></i></a>
+                        <a href="/tour/detail/{{$tour['id']}}" class=" label-info read_more">Read More <i
+                                    class="icon-arrow-right22"></i></a>
                     </div>
 
                     <div class="col-md-2 col-sm-6 animate-box" data-animate-effect="fadeIn">
@@ -39,9 +39,18 @@
                             @if(!empty($list_services))
                                 @foreach($list_services as $service)
                                     @if(!empty($service))
-                                    <li>
-                                        <img src="{{asset('')}}{{$service}}" class="img-icon-list">
-                                    </li>
+                                        <?php
+                                            $item = $services_tour->find($service);
+                                        ?>
+                                            @if($item!=null)
+                                        <li>
+
+                                               <a href="{{$item->link}}" title="{{$item->name}}" target="_blank"> <img src="{{asset('')}}{{$item->image}}" alt="{{$item->name}}"
+                                                     class="img-icon-list"></a>
+
+
+                                        </li>
+                                            @endif
                                     @endif
                                 @endforeach
                             @endif
