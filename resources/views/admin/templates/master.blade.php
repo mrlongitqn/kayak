@@ -117,6 +117,11 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{url('admin/tourservice')}}">
+                        <i class="fa fa-bed"></i> <span>Manage Tour Services</span>
+                    </a>
+                </li>
+                <li>
                     <a href="{{url('admin/category')}}">
                         <i class="fa fa-folder"></i> <span>Manage Categories</span>
                     </a>
@@ -132,11 +137,20 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{url('admin/custom-link')}}">
+                        <i class="fa fa-list-ol"></i> <span>Manage Custom Link</span>
+                    </a>
+                </li>
+                <li>
                     <a href="{{url('admin/slide')}}">
                         <i class="fa fa-navicon"></i> <span>Manage Slides</span>
                     </a>
                 </li>
-
+                <li>
+                    <a href="{{url('admin/config')}}">
+                        <i class="fa fa-cog"></i> <span>Config Information</span>
+                    </a>
+                </li>
                 <li>
                     <a href="{{url('admin/user')}}">
                         <i class="fa fa-user-circle"></i> <span>Manage Users</span>

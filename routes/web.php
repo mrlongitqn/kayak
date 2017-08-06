@@ -40,12 +40,30 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 
     Route::get('slide/edit/{id}', 'SlideController@edit');
     Route::post('slide/save/{id}', 'SlideController@save');
     Route::post('slide/delete', 'SlideController@delete');
+
+    //Tour service
+    Route::get('tourservice', 'TourServiceController@index');
+    Route::get('tourservice/create', 'TourServiceController@create');
+    Route::get('tourservice/edit/{id}', 'TourServiceController@edit');
+    Route::post('tourservice/save/{id}', 'TourServiceController@save');
+    Route::post('tourservice/delete', 'TourServiceController@delete');
+
+    //Custom link
+    Route::get('custom-link', 'CustomLinkController@index');
+    Route::get('custom-link/create', 'CustomLinkController@create');
+    Route::get('custom-link/edit/{id}', 'CustomLinkController@edit');
+    Route::post('custom-link/save/{id}', 'CustomLinkController@save');
+    Route::post('custom-link/delete', 'CustomLinkController@delete');
+
+    //Config
+    Route::get('config','ConfigController@GetConfig');
+    Route::post('config/update-config/{id}','ConfigController@UpdateConfig');
+
+    //User
     Route::get('/', [
         'as' => 'admin',
         'uses' => 'UsersController@getMemberList'
     ]);
-
-    //User
     Route::get('user', 'UserController@index');
     Route::get('user/create', 'UserController@create');
     Route::get('user/edit/{id}', 'UserController@edit');

@@ -5,55 +5,55 @@
                 <div class="col-md-4 col-sm-4 col-xs-12 fh5co-footer-link">
                     <h3>Tour Collections</h3>
                     <ul>
-                        <li><a href="#">River kayak tours</a>
-                        </li>
-                        <li><a href="#">Local craft and cuisine</a>
-                        </li>
-                        <li><a href="#">Camping</a>
-                        </li>
+                        @foreach($tour_collections as $item)
+                            <li>
+                                <a href="{{$item->link}}">{{$item->name}}</a>
+
+                            </li>
+                        @endforeach
+
 
                     </ul>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-12 fh5co-footer-link">
                     <h3> Tour Services</h3>
                     <ul>
-                        <li><a href="#">Car transfer</a>
-                        </li>
-                        <li><a href="#">Train/air ticketing</a>
-                        </li>
+                        @foreach($tour_services as $item)
+                            <li>
+                                <a href="{{$item->link}}">{{$item->name}}</a>
+
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-12 fh5co-footer-link">
                     <h3>CONTACT US</h3>
-                        <table>
-                            <tr>
-                                <td>Email:</td>
-                                <td>hoiankayaktours@gmail.com
-                                </td>
-                            </tr>
-                           <tr>
-                                <td></td>
-                                <td>info@hoiankayaktours.com</td>
-                            </tr>
-                            <tr>
-                                <td>Hotline:</td>
-                                <td>+84 9 7943 7338
-                                </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>+84 9 1664 5858</td>
-                            </tr>
-                            <tr>
-                                <td>Address:</td>
-                                <td>Thuan Tinh Pier - Tran Nhan Tong Street
-                                </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>Hamlet 2 - Cam Thanh Village, Hoi An City, Vietnam</td>
-                            </tr>
-                        </table>
+                    <table>
+                        <tr>
+                            <td>Email:</td>
+                            <td>{{$config_data->contact_email}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>{{$config_data->contact_email2}}</td>
+                        </tr>
+                        <tr>
+                            <td>Hotline:</td>
+                            <td>{{$config_data->contact_phone}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>{{$config_data->contact_phone2}}</td>
+                        </tr>
+                        <tr>
+                            <td valign="top">Address:</td>
+                            <td>{!! $config_data->contact_add !!}
+                            </td>
+                        </tr>
+
+                    </table>
                 </div>
             </div>
         </div>

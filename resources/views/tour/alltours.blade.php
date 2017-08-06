@@ -25,19 +25,18 @@
                             <div class="carousel-inner">
                                 @foreach($tours as $tour)
                                     <div class="item active">
-                                        <a href="tour/detail/{{$tour['id']}}" target="_blank">
-                                            <div class="col-md-4 col-sm-6 fh5co-tours" >
-                                                <div class="mini-view" href="{{asset('').$tour['image_feature']}}" data-fancybox-title="{{$tour['description']}}">
-                                                    <img src="{{asset('').$tour['image_feature']}}" alt="tours" class="img-responsive">
-                                                    <div class="price">
-
-
-                                                        <span class="text">USD {{$tour['price']}}/PAX</span>
-
-
+                                        <a href="/tour/detail/{{$tour['id']}}">
+                                            <div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
+                                                <div><img src="{{asset('').$tour['image_feature']}}" alt="tours" class="img-responsive">
+                                                    <div class="category">
+                                                        <span>{{$tour['category_name']}}</span>
                                                     </div>
+
                                                     <div class="desc">
                                                         <span>{{$tour['name']}}</span>
+                                                        <div class="price">
+                                                            <span class="text">USD {{$tour['price']}}/PAX</span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
