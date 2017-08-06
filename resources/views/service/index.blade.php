@@ -125,6 +125,10 @@
                 </tbody>
             </table>
         </div>
+        <div class="clearfix"></div>
+        <div class="text-center">
+            <a href="/bookservice" class="button-book"><img src="/images/booknow.png"/></a>
+        </div>
     </div>
 </div>
 @include('layout.footer')
