@@ -44,11 +44,11 @@
                             @endif
                         </ul>
                     </li>
-                    <li><a href="#">SERVICES</a>
+                    <li><a href="/services">SERVICES</a>
                     </li>
                     <li><a href="/projects">RESPONSIBLE TRAVEL</a>
                     </li>
-                    <li><a href="#">CONTACT US</a>
+                    <li><a href="/contact">CONTACT US</a>
                     </li>
                 </ul>
             </nav>

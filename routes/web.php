@@ -72,6 +72,7 @@ Route::get('/projects', 'ProjectController@get_list');
 Route::get('/contact', 'ContactController@index');
 Route::get('/booktour/{id}', 'BooktourController@getIndex');
 Route::post('/booktour/{id}', 'BooktourController@index');
+Route::get('/services', 'ServiceController@index');
 
 Route::get('/manage', function(){
     return redirect('admin/booking');
