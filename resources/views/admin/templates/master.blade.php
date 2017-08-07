@@ -112,6 +112,11 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{url('admin/bookservice')}}">
+                        <i class="fa fa-calendar"></i> <span>Manage Bookservice</span>
+                    </a>
+                </li>
+                <li>
                     <a href="{{url('admin/tour')}}">
                         <i class="fa fa-table"></i> <span>Manage Tours</span>
                     </a>

@@ -28,6 +28,12 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 
     Route::post('booking/delete', 'BookingController@delete');
     Route::get('booking/resolved/{id}', 'BookingController@resolved');
 
+    //Booking
+    Route::get('bookservice/', 'BookserviceController@index');
+    Route::get('bookservice/detail/{id}', 'BookserviceController@detail');
+    Route::post('bookservice/delete', 'BookserviceController@delete');
+    Route::get('bookservice/resolved/{id}', 'BookserviceController@resolved');
+
     //Responnsible travel
     Route::get('responsible', 'ResponsibleController@index');
     Route::get('responsible/create', 'ResponsibleController@create');
