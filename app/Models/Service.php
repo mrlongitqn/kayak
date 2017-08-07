@@ -37,4 +37,14 @@ class Service extends Model
             ->first();
 
     }
+
+    public function create($data) {
+        return $this->insert($data);
+    }
+
+    public function update_data($data, $id) {
+
+       return $this->where("id",$id)
+            ->update($data);
+    }
 }

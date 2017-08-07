@@ -17,6 +17,14 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 
     Route::post('category/destroy', 'CategoryController@destroy');
     Route::post('category/save/{id}', 'CategoryController@postSave');
 
+   //Admin service car
+    Route::get('service', 'ServiceController@index');
+    Route::get('service/register', 'ServiceController@register');
+    Route::post('service/register', 'ServiceController@register');
+    Route::post('service/destroy', 'ServiceController@destroy');
+    Route::get('service/edit/{id}', 'ServiceController@edit');
+    Route::post('service/edit/{id}', 'ServiceController@edit');
+
     //Tours
     Route::resource('tour', 'TourController');
     Route::post('tour/save/{id}', 'TourController@save');
