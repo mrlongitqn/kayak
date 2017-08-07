@@ -4,7 +4,7 @@
     <div class="col-xs-12">
         <div class="box box-info">
             <div class="box-header with-border">
-                <h3 class="box-title">Tour: {{$booking->tour_name}}</h3>
+                <h3 class="box-title">Route: {{$booking->route}}</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
@@ -31,6 +31,12 @@
 
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" value="{{$booking->phone}}" disabled="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-3 control-label">Book at</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" value="{{$booking->created_at}}" disabled="">
                             </div>
                         </div>
                     </fieldset>

@@ -2,12 +2,12 @@
 $i = 1;
 ?>
 @extends('admin.templates.master')
-@section('header','Manage Booking')
-@section('title','Manage Booking')
+@section('header','Manage Book Service')
+@section('title','Manage Book Service')
 @section('content')
     <div class="box">
         <div class="box-header with-border">
-            <h3 class="box-title">Tours List</h3>
+            <h3 class="box-title">Service List</h3>
             <div class="box-tools">
                 <form action="" method="get">
                     <div class="input-group input-group-sm" style="width: 150px;">
