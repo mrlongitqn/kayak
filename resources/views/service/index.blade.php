@@ -8,7 +8,7 @@
                     <h3 class="title__primary">SERVICES</h3>
                 </div>
             </div>
-            <h4>DANANG AIRPORT TRANSFER</h4>
+            <h3><strong>DANANG AIRPORT TRANSFER</strong></h3>
             <table class="table table-bordered">
                 <thead>
                 <tr>
@@ -43,7 +43,8 @@
 
                 </tbody>
             </table>
-            <h4>TRANSFER FROM HOI AN</h4>
+            <br>
+            <h3><strong>TRANSFER FROM HOI AN</strong></h3>
             <table class="table table-bordered">
                 <thead>
                     <tr>

@@ -33,6 +33,7 @@ $i = 1;
                     <th>Phone</th>
                     <th>Desired Start Date</th>
                     <th>Tour</th>
+                    <th>Ip Address</th>
                     <th>Status</th>
                     <th style="width: 50px"></th>
                 </tr>
@@ -60,6 +61,9 @@ $i = 1;
                                 Resolved
                                 </span>
                             @endif
+                        </td>
+                        <td>
+                            {{$book->ip}}
                         </td>
                         <td>
                             <a href="{{action('Admin\BookingController@detail', ['id' => $book->id])}}"

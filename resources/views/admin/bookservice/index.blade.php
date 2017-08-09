@@ -33,6 +33,7 @@ $i = 1;
                     <th>Phone</th>
                     <th>Date of Service</th>
                     <th>Route</th>
+                    <th>Ip address</th>
                     <th>Status</th>
                     <th style="width: 50px"></th>
                 </tr>
@@ -49,6 +50,9 @@ $i = 1;
                         </td>
                         <td>
                             {{$book->route}}
+                        </td>
+                        <td>
+                            {{$book->ip}}
                         </td>
                         <td>
                             @if($book->status==0)

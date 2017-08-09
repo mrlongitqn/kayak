@@ -37,13 +37,17 @@ class News extends Model
             ->where('news.category_id', '=', $category_id);
         if (in_array('top', $options)) {
             $list_tour = $list_tour->limit(3);
-            $list_tour = $list_tour->get();
+            $list_tour = $list_tour->orderBy('id','desc')->get();
 
             return (empty($list_tour)) ? [] : $list_tour->toArray();
         }
 
-        $list_tour = $list_tour->get();
+        $list_tour = $list_tour->orderBy('id','desc')->get();
 
         return (empty($list_tour)) ? [] : $list_tour->toArray();
     }
+    public function getById($id){
+        return $this->find($id);
+    }
+
 }

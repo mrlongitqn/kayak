@@ -14,8 +14,8 @@
                                 <h3 class="title__primary">{{$key}} tour</h3>
                             </div>
                             <div class="see-more">
-                                <a href="#theCarousel1" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-                                <a href="#theCarousel1" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+                                {{--<a href="#theCarousel1" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>--}}
+                                {{--<a href="#theCarousel1" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>--}}
                                 <a class="label label-success" href="/tour/{{$tours[0]['category_id']}}">VIEW ALL <span class="icon-circle-right"></span></a>
                             </div>
                         </div>

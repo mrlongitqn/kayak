@@ -33,6 +33,10 @@ class ServiceController extends Controller
         return $this->_render('service/index',$view_data);
     }
 
+    public function detail($id){
+
+    }
+
     /**
      *  Form book service
      */
@@ -48,10 +52,11 @@ class ServiceController extends Controller
             $data['service_id'] = $route_id;
             $data['route'] = $route_name->route;
             $data['status'] = 0;
+            $data['ip'] = $request->ip();
             $result = $this->bookservice->create($data);
 
             if ($result) {
-                return redirect(url('/'));
+                return view('booktour.success');
             }
         }
         $service_car = $this->service->get_list();
@@ -59,4 +64,6 @@ class ServiceController extends Controller
         $view_data['service_car'] = $service_car;
         return $this->_render('service/bookservice',$view_data);
     }
+
+
 }

@@ -11,18 +11,18 @@
         </div>
         <div class="col-md-12 animate-box">
             @php
-            $list_service = explode(',',$tour_detail['services']);
+                $list_service = explode(',',$tour_detail['services']);
             @endphp
             @if(!empty($list_service))
                 @foreach($list_service as $service)
                     @if($service!='')
                         <?php
-                            $item = $services_tour->find($service);
+                        $item = $services_tour->find($service);
                         ?>
-                    @if($item!=null)
-                        <a href="{{$item->link}}" title="{{$item->name}}" target="_blank">
-                        <img src="{{asset('').$item->image}}" class="img-icon-list">
-                        </a>
+                        @if($item!=null)
+                            <a href="{{$item->link}}" title="{{$item->name}}" target="_blank">
+                                <img src="{{asset('').$item->image}}" class="img-icon-list">
+                            </a>
                         @endif
                     @endif
                 @endforeach
@@ -40,13 +40,15 @@
         </div>
         <div class="col-md-4 animate-box">
             @php
-            $list_image = explode(',',$tour_detail['images']);
+                $list_image = explode(',',$tour_detail['images']);
             @endphp
             @if(!empty($list_image))
                 @foreach($list_image as $image)
-                    <div class="img-detail">
-                        <img class="img-responsive" src="{{asset('').$image}}" alt="travel">
-                    </div>
+                    @if(!empty($image))
+                        <div class="img-detail">
+                            <img class="img-responsive" src="{{asset('').$image}}" alt="travel">
+                        </div>
+                    @endif
                 @endforeach
             @endif
             @if($tour_detail['videos']!='')

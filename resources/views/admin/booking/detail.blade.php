@@ -40,6 +40,13 @@
                                 <input type="text" class="form-control" value="{{$booking->created_at}}" disabled="">
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-3 control-label">Ip Address</label>
+
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" value="{{$booking->ip}}" disabled="">
+                            </div>
+                        </div>
                     </fieldset>
                     <fieldset>
                         <legend>Book tour info</legend>

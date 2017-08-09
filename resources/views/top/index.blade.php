@@ -15,22 +15,22 @@
 
             @if (!empty($tours))
                 @foreach ($tours as $tour)
-                        <a href="/tour/detail/{{$tour['id']}}">
-                            <div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
-                                <div><img src="{{asset('').$tour['image_feature']}}" alt="tours" class="img-responsive">
-                                    <div class="category">
-                                        <span>{{$tour['category_name']}}</span>
-                                    </div>
+                    <a href="/tour/detail/{{$tour['id']}}">
+                        <div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
+                            <div><img src="{{asset('').$tour['image_feature']}}" alt="tours" class="img-responsive">
+                                <div class="category">
+                                    <span>{{$tour['category_name']}}</span>
+                                </div>
 
-                                    <div class="desc">
-                                        <span>{{$tour['name']}}</span>
-                                        <div class="price">
-                                            <span class="text">USD {{$tour['price']}}/PAX</span>
-                                        </div>
+                                <div class="desc">
+                                    <span>{{$tour['name']}}</span>
+                                    <div class="price">
+                                        <span class="text">USD {{$tour['price']}}/PAX</span>
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </div>
+                    </a>
                 @endforeach
             @endif
         </div>
@@ -53,25 +53,32 @@
                     <div id="myCarouse2" class="carousel slide" data-ride="carousel">
                         <!-- Indicators -->
                         <ol class="carousel-indicators">
-                                @foreach($projects as $key => $image)
+                            @foreach($projects as $key => $project)
+                                <?php $image_project = explode(',', $project['image_feature'])?>
+                                @foreach($image_project as $image)
                                     @if(!empty($image))
-                                        <li data-target="#myCarouse2" class="<?php if($i==0) echo 'active';?>" data-slide-to="{{$i++}}" ></li>
+                                        <li data-target="#myCarouse2" class="<?php if ($i == 0) echo 'active';?>"
+                                            data-slide-to="{{$i++}}"></li>
                                     @endif
                                 @endforeach
+                            @endforeach
                         </ol>
 
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
-                                @foreach($projects as $key => $project)
+                            @foreach($projects as $key => $project)
+                                <?php $image_project = explode(',', $project['image_feature'])?>
+                                @foreach($image_project as $image)
                                     @if(!empty($image))
-                                        <div class="item<?php if($j==0) echo ' active'; $j++;?>">
-                                            <img src="{{asset('').$project['image_feature']}}" style="width:100%;">
+                                        <div class="item<?php if ($j == 0) echo ' active'; $j++;?>">
+                                            <img src="{{asset('').$image}}" style="width:100%;">
                                             <div class="carousel-caption">
                                                 <span class="caption-slide">{{$project['name']}}</span>
                                             </div>
                                         </div>
                                     @endif
                                 @endforeach
+                            @endforeach
                         </div>
 
                         <!-- Left and right controls -->
@@ -86,10 +93,13 @@
                     </div>
                 </div>
                 <div class="col-md-5 animate-box">
-
-                    <iframe width="100%" height="326px" src="{{$projects[0]['videos']}}" frameborder="0"
-                            allowfullscreen></iframe>
-
+                    @foreach($projects as $project)
+                        @if(!empty($project['videos']))
+                            <iframe width="100%" height="326px" src="{{$project['videos']}}" frameborder="0"
+                                    allowfullscreen></iframe>
+                            @break
+                        @endif
+                    @endforeach
                 </div>
             @endif
         </div>

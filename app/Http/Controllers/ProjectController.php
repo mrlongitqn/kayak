@@ -33,4 +33,8 @@ class ProjectController extends Controller
             'projects' => $project
         ]);
     }
+    public function detail($id){
+       $project = $this->news->getById($id);
+       return view('project.detail')->with('project', $project);
+    }
 }

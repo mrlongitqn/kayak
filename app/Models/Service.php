@@ -47,4 +47,5 @@ class Service extends Model
        return $this->where("id",$id)
             ->update($data);
     }
+
 }

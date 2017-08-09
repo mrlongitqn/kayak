@@ -45,11 +45,11 @@ class BooktourController extends Controller
         $data['status'] = 0;
         $ldate = date('Y-m-d H:i:s');
         $data['created_at'] = $ldate;
-
+        $data['ip'] = $request->ip();
         $result = $this->booktour->create($data);
 
         if ($result) {
-            return redirect(url('/'));
+            return view('booktour.success');
         }
 
 
