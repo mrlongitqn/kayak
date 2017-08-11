@@ -73,7 +73,7 @@
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="{{url('admin/user/changepass')}}" class="btn btn-default btn-flat">Change password</a>
+                                    <a href="{{url('admin/user/update-password')}}" class="btn btn-default btn-flat">Change password</a>
                                 </div>
                                 <div class="pull-right">
                                     <a href="{{url('auth/logout')}}" class="btn btn-default btn-flat">Sign out</a>

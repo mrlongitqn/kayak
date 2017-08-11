@@ -55,7 +55,14 @@
                 <div class="form-group">
                     {!! Form::label('image_feature','Image Feature', array('class'=>'col-sm-2 control-label')) !!}
                     <div class="col-sm-10">
-                        <input id="image_feature" name="image_feature" type="file" class="form-control">
+                        <div class="input-group">
+                            <input id="image_feature" name="image_feature" type="file" class="form-control">
+                            <div class="input-group-addon">
+
+                                <span class="text-red">Size: 800x600</span>
+                            </div>
+                        </div>
+
                         @if(isset($tour->image_feature) && $tour->image_feature!='')
                         <div id="old_feature">
                             <img src="{{asset('').$tour->image_feature}}"/>
@@ -71,7 +78,13 @@
                 <div class="form-group">
                     {!! Form::label('images','List Images', array('class'=>'col-sm-2 control-label')) !!}
                     <div class="col-sm-10">
-                        <input id="file-input" name="images[]" type="file" multiple class="form-control">
+                        <div class="input-group">
+                            <input id="file-input" name="images[]" type="file" multiple class="form-control">
+                            <div class="input-group-addon">
+                                <span class="text-red">Size: 800x600</span>
+                            </div>
+                        </div>
+
                         <div id="list_images">
                             @php
                             $list_images = explode(',',$tour->images);

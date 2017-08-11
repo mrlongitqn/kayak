@@ -34,7 +34,13 @@
             <div class="form-group">
                 {!! Form::label('image','Image', array('class'=>'col-sm-2 control-label')) !!}
                 <div class="col-sm-10">
-                    {!! Form::file('image' ,array('class'=>'form-control')) !!}
+                    <div class="input-group">
+                        {!! Form::file('image' ,array('class'=>'form-control')) !!}
+                        <div class="input-group-addon">
+                            <span class="text-red">Square: min size: 100x100</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 

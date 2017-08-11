@@ -11,7 +11,7 @@
             <form class="form-horizontal animate-box" action="" method="post">
                 {{ csrf_field() }}
             <div class="form-group">
-                <label class="control-label col-sm-5" for="route">TRANSFER FROM</label>
+                <label class="control-label col-sm-2" for="route">TRANSFER FROM</label>
                 <div class="col-sm-7">
                     <select class="form-control" id="route" name="transfer_from">
                         <option value="1">Da Nang</option>
@@ -26,7 +26,7 @@
 
             </div>
             <div class="form-group">
-                    <label class="control-label col-sm-5" for="email">Route</label>
+                    <label class="control-label col-sm-2" for="email">Route</label>
                     <div class="col-sm-7">
                         <input type="text" class="form-control" id="places_of_pick_up" placeholder="Route"
                                name="route" value="{{ old('route') }}">
@@ -38,7 +38,7 @@
                     </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-sm-5" for="email">Distance</label>
+                <label class="control-label col-sm-2" for="email">Distance</label>
                 <div class="col-sm-7">
                     <input type="text" class="form-control" id="places_of_pick_up" placeholder="Distance"
                            name="distance" value="{{ old('distance') }}">
@@ -50,7 +50,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-sm-5" for="email">Duration</label>
+                <label class="control-label col-sm-2" for="email">Duration</label>
                 <div class="col-sm-7">
                     <input type="text" class="form-control" id="places_of_pick_up" placeholder="Duration"
                            name="duration" value="{{ old('duration') }}">
@@ -62,7 +62,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-sm-5" for="email">Price for 4-seat car</label>
+                <label class="control-label col-sm-2" for="email">Price for 4-seat car</label>
                 <div class="col-sm-7">
                     <input type="text" class="form-control" id="places_of_pick_up" placeholder="Price for 4-seat car"
                            name="price_4seat" value="{{ old('price_4seat') }}">
@@ -74,7 +74,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-sm-5" for="email">Price for 7-seat car</label>
+                <label class="control-label col-sm-2" for="email">Price for 7-seat car</label>
                 <div class="col-sm-7">
                     <input type="text" class="form-control" id="places_of_pick_up" placeholder="Price for 7-seat car"
                            name="price_7seat" value="{{ old('price_7seat') }}">
@@ -86,7 +86,7 @@
                 </div>
             </div>
              <div class="form-group">
-                <label class="control-label col-sm-5" for="email">Price for 16-seat car</label>
+                <label class="control-label col-sm-2" for="email">Price for 16-seat car</label>
                 <div class="col-sm-7">
                     <input type="text" class="form-control" id="places_of_pick_up" placeholder="Price for 16-seat car"
                            name="price_16seat" value="{{ old('price_16seat') }}">

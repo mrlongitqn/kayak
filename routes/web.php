@@ -83,6 +83,8 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 
     Route::get('user/edit/{id}', 'UserController@edit');
     Route::post('user/save/{id}', 'UserController@save');
     Route::post('user/delete', 'UserController@delete');
+    Route::get('user/update-password', 'UserController@getUpdatePassword');
+    Route::post('user/update-password', 'UserController@postUpdatePassword');
 
 });
 Route::get('auth/logout', 'Auth\LoginController@logout');

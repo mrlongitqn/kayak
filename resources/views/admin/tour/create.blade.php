@@ -31,9 +31,7 @@
                 <div class="form-group">
                     {!! Form::label('parent_id','Category', array('class'=>'col-sm-2 control-label')) !!}
                     <div class="col-sm-10">
-
                         {!! Form::select('category_id',$categories,'0',array('class'=>'form-control')) !!}
-
                     </div>
                 </div>
                 <div class="form-group">
@@ -52,14 +50,24 @@
                 <div class="form-group">
                     {!! Form::label('image_feature','Image Feature', array('class'=>'col-sm-2 control-label')) !!}
                     <div class="col-sm-10">
-                        <input id="image_feature" name="image_feature" type="file" class="form-control">
+                        <div class="input-group">
+                            <input id="image_feature" name="image_feature" type="file" class="form-control">
+                            <div class="input-group-addon">
+                                <span class="text-red">Size: 800x600</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="form-group">
                     {!! Form::label('images','List Images', array('class'=>'col-sm-2 control-label')) !!}
                     <div class="col-sm-10">
-                        <input id="file-input" name="images[]" type="file" multiple class="form-control">
+                        <div class="input-group">
+                            <input id="file-input" name="images[]" type="file" multiple class="form-control">
+                            <div class="input-group-addon">
+                                <span class="text-red">Size: 800x600</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

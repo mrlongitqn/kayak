@@ -46,7 +46,13 @@
                 <div class="form-group">
                     {!! Form::label('image_feature','Image Feature', array('class'=>'col-sm-2 control-label')) !!}
                     <div class="col-sm-10">
-                        <input id="image_feature" name="image_feature[]" type="file" multiple class="form-control">
+                        <div class="input-group">
+                            <input id="image_feature" name="image_feature[]" type="file" multiple class="form-control">
+                            <div class="input-group-addon">
+                                <span class="text-red">Size: 800x400</span>
+                            </div>
+                        </div>
+
                         <div id="list_images">
                             @php
                                 $list_images = explode(',',$responsible->image_feature);

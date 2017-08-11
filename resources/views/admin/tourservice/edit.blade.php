@@ -34,8 +34,14 @@
                 <div class="form-group">
                     {!! Form::label('image','Image', array('class'=>'col-sm-2 control-label')) !!}
                     <div class="col-sm-10">
-                        {!! Form::file('image_new' ,array('class'=>'form-control')) !!}
-                        <input type="hidden" name="image" value="{{$slide->image}}">
+                        <div class="input-group">
+                            {!! Form::file('image_new' ,array('class'=>'form-control')) !!}
+                            <div class="input-group-addon">
+                                <span class="text-red">Square: min size: 100x100</span>
+                            </div>
+                            <input type="hidden" name="image" value="{{$slide->image}}">
+                        </div>
+
                         <div>
                             Old Image(if you choose new image then old image will deleted)<br/>
                             <img src="{{asset('').$slide->image}}" height="200px"/>

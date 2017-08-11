@@ -52,6 +52,9 @@ $i = 1;
                             {{$book->tour_name}}
                         </td>
                         <td>
+                            {{$book->ip}}
+                        </td>
+                        <td>
                             @if($book->status==0)
                                 <span class="label label-warning">
                                     New
@@ -62,9 +65,7 @@ $i = 1;
                                 </span>
                             @endif
                         </td>
-                        <td>
-                            {{$book->ip}}
-                        </td>
+
                         <td>
                             <a href="{{action('Admin\BookingController@detail', ['id' => $book->id])}}"
                                title="Detail" class="text-green"><i class="fa fa-info-circle"></i></a>
