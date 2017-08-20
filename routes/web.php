@@ -106,10 +106,13 @@ Route::get('/projects', 'ProjectController@get_list');
 Route::get('/projects/detail/{id}', 'ProjectController@detail');
 Route::get('/contact', 'ContactController@index');
 Route::get('/booktour/{id}', 'BooktourController@getIndex');
+Route::get('/booktour/successfully', 'BooktourController@BookSuccess');
 Route::post('/booktour/{id}', 'BooktourController@index');
 Route::get('/bookservice', 'ServiceController@bookservice');
 Route::post('bookservice', 'ServiceController@bookservice');
 Route::get('/services', 'ServiceController@index');
+Route::get('/booktour-successfully', 'BooktourController@BookSuccess');
+Route::get('/bookservice-successfully', 'ServiceController@BookSuccess');
 
 Route::get('/manage', function(){
     return redirect('admin/booking');

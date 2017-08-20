@@ -4,7 +4,7 @@
     <div class="col-md-12">
         <div class="title title--big title--center title--decoration-bottom-center">
 
-            <h3 class="title__primary">Book tour successfully</h3>
+            <h3 class="title__primary">Book service successfully</h3>
             <p>
                 Thank you. We will contact you soon.<br/>
             </p>

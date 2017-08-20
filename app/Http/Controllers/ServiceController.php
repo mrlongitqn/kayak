@@ -53,16 +53,20 @@ class ServiceController extends Controller
             $data['route'] = $route_name->route;
             $data['status'] = 0;
             $data['ip'] = $request->ip();
+            $data['created_at'] = date( 'Y-m-d H:i:s' );
             $result = $this->bookservice->create($data);
 
             if ($result) {
-                return view('booktour.success');
+                return redirect()->action('ServiceController@BookSuccess');
             }
         }
         $service_car = $this->service->get_list();
 
         $view_data['service_car'] = $service_car;
         return $this->_render('service/bookservice',$view_data);
+    }
+    public function BookSuccess(){
+    	return view('service.success');
     }
 
 
